@@ -1,4 +1,122 @@
-h1.{
-    background-repeat: initial;
+.login{
+    display: flex;
+    flex-flow: column wrap;
+    height: 100vh;
+    margin: 0 auto;
+    align-items: center;
+
 }
-hola mirim
+body{
+    
+    color: black;
+    background-image: url(img/bg.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:center;
+    font-family: sans-serif;
+    
+ }
+input{
+    width: 335px;
+    height: 48px;
+}
+  
+    
+img{   
+    height: 255px;
+    width: 318px;
+    align-self: center;
+}
+ 
+
+.login label{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 25px;
+    border-radius: 2px;
+    
+    align-self: center;
+}   
+.login button{
+    background: #3897F0;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 25px;
+    border-radius: 2px;
+    align-self: center;
+}
+.noidentificado{
+    align-self: flex-end; 
+}
+.login p{
+    font-size: 15px;
+    align-items: flex-end;
+}
+
+
+/*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+nav{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #5D4954;
+    font-family: 'Poppins', sans-serif;
+}
+.logo{
+    color:rgb(226,226,226);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.burger div{
+    width: 25px;
+    height: 5px;
+    color: rgb(226,226,226);
+    margin: 5px;
+}
+@media screen and (max-width:1024px){
+    .nav-links{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:768px){
+    body{
+        overflow: hidden;
+
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #5D4954;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%); 
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+
+}
+.nombre {
+position: absolute;
+width: 335px;
+height: 210px;
+left: 20px;
+top: 204px;
+}
+
+
+
