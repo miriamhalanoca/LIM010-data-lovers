@@ -19,8 +19,8 @@ Imagen y link del prototipo de alta fidelidad final (mobile y desktop) en Figma.
 
 ## Preámbulo
 
-## Un resumen de 1 o 2 líneas de qué se trata tu proyecto e indicar el usuario y la contraseña para utilizar el Demo.
-el proyecto se trata de un juego llamado pokemon El cual consiste en saber cuantos pokemones hay cuales son las caracteristicas de cada uno, que poderes tienen y cual es el pokemon mas fuerte que hay en el juego tener una opcion de clasificar a los pokemones de la A-Z y de la Z-A y por poderes de mayor a menor y de menor a mayor.
+## El mundo Pokemon
+Es un producto dirigido a usuarios que quieren entrar al mundo de los pokemones y aprender sus caracteristicas para iniciarse en el juego de pokemon.
 
 ## La imagen final de tu proyecto)
 ------
