@@ -14,3 +14,4 @@ describe('example', () => {
     assert.equal(example(), 'example');
   });
 })
+
