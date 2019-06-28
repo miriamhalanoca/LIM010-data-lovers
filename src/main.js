@@ -2,6 +2,7 @@
 const pagina1 = document.getElementById('pantalla1');
 const pagina2 = document.getElementById('pantalla2');
 const boton1 = document.getElementById('btn');
+
 let contador = 0;
 
 boton1.addEventListener("click", (event) => {

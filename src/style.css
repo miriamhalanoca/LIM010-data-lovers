@@ -18,9 +18,7 @@ body{
     align-items: center;
 }
 
-.hide{
-    display: none;
-}
+
 
 .login{
     display: flex;
@@ -91,6 +89,9 @@ input{
         overflow: hidden;
         justify-content: center;
     }
+}
+.hide{
+    display: none;
 }
 
 /*{
