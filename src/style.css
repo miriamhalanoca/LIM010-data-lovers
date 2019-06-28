@@ -92,9 +92,15 @@ img{
         overflow: hidden;
         justify-content: center;
     }
+
  }
  .hide{
     display: none;
+}
+.errorDeContraseña{
+    font-family: Open Sans;
+    font-size: 15px;
+    color: red;
 }
 /*{
     margin: 0px;
