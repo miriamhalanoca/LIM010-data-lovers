@@ -1,3 +1,8 @@
+
+.hide{
+    display: none;
+}
+
 .login{
     display: flex;
     flex-flow: column wrap;
@@ -54,7 +59,6 @@ img{
     font-size: 15px;
     align-items: flex-end;
 }
-
 
 /*{
     margin: 0px;
