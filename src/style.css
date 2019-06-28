@@ -155,10 +155,68 @@ img{
         overflow: hidden;
         justify-content: center;
     }
+
  }
  .hide{
     display: none;
 }
+.errorDeContraseña{
+    font-family: Open Sans;
+    font-size: 15px;
+    color: red;
+}
+/*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+nav{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #5D4954;
+    font-family: 'Poppins', sans-serif;
+}
+.logo{
+    color:rgb(226,226,226);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.burger div{
+    width: 25px;
+    height: 5px;
+    color: rgb(226,226,226);
+    margin: 5px;
+}
+@media screen and (max-width:1024px){
+    .nav-links{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:768px){
+    body{
+        overflow: hidden;
+
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #5D4954;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%); 
+    }
+    .nav-links li{
+        opacity: 0;
+    }
 
 
 
