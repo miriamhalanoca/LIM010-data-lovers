@@ -5,7 +5,7 @@
   <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Data Lovers</title>
- <link rel="stylesheet" href="style.css" />
+ <link rel="stylesheet" href="style.css"/>
 
 </head>
 
@@ -31,22 +31,36 @@
         <p>¿No tienes una cuenta? Registrate</p>
       </form>
     </section>
-    <section id="pantalla2">
-      <button id="atras" type="submit">INICIO</button>
-     <button id="filtrar" type="submit">FILTRAR</button>
-      <button id="huevos" type="submit">HUEVOS</button>
-
-
-
-    </section>
-  </main>
-  <footer></footer>
-  <!-- <script src="./data/lol/lol.js"></script> -->
-  <script src="./data/pokemon/pokemon.js"></script>
-
-  <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-  <script src="data.js"></script>
-  <script src="main.js"></script>
-</body>
-
-</html>
+   
+    <section id="pantalla2"  >
+           <button id="atras" type="submit">INICIO</button>
+          <select id="pet-select">
+              <option value="">POR ORDEN </option>
+              <option value="A">A-Z</option>
+              <option value="B">Z-A</option>
+              <option value="C">MENOR-MAYOR</option>
+              <option value="D">MAYOR-MENOR</option>
+            </select>
+              <select id="pet-select">
+                  <option value="">FILTRAR</option>
+                  <option value="E">POR PODERES </option>
+                </select>
+                <select id="pet-select">
+                    <option value="">HUEVOS A ECLOSIONAR</option>
+                    <option value="E">----</option>
+                  </select>
+                  
+                  <div id="pokemon12"></div>
+                
+      </section>
+      </main>
+      <footer></footer>
+      <!-- <script src="./data/lol/lol.js"></script> -->
+      <script src="./data/pokemon/pokemon.js"></script>
+    
+      <!-- <script src="./data/worldbank/worldbank.js"></script> -->
+      <script src="data.js"></script>
+      <script src="main.js"></script>
+    </body>
+    
+    </html>
