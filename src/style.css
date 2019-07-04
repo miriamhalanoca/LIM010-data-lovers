@@ -1,5 +1,8 @@
-    
-
+  
+*{
+    margin:0; 
+    padding:0;
+    }
 body{
     
     color: black;
@@ -7,10 +10,15 @@ body{
     background-repeat:no-repeat;
     background-size: 100% 100%;
     font-family: sans-serif;
-   /* min-height: 100vh;*/
+    /*min-height: 100vh;*/
     background-attachment: fixed;
 
 }
+
+
+
+
+
 .page-main{
     height: 100%;
     width: 100%;
@@ -23,6 +31,17 @@ body{
 
 }
 .login{
+    background-color: rgba(166, 224, 221, 0.548);
+   border-radius: 5px;
+   padding: 17px;
+   width: 500px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   -webkit-box-shadow: 10px 10px 5px 5px rgba(94, 93, 93, 0.75);
+   -moz-box-shadow: 10px 10px 5px 5px rgba(94, 93, 93, 0.75);
+   box-shadow: 10px 10px 5px 5px rgba(94, 93, 93, 0.75);
     display: flex;
     flex-flow: column wrap;
     height: 600px;
@@ -98,8 +117,20 @@ img{
  .hide{
     display: none;
 }
+
+.pokemon {
+    
+    
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-around;
+    align-content:flex-start;
+
+  }
+  
 .errorDeContraseña{
-    font-family: Open Sans;
+    font-family: Open;
     font-size: 15px;
     color: red;
 }

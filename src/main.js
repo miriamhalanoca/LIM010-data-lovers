@@ -1,4 +1,4 @@
-/* Manejo del DOM */
+// Manejo del DOM 
 const pagina1 = document.getElementById('pantalla1');
 const pagina2 = document.getElementById('pantalla2');
 const boton1 = document.getElementById('btn');
@@ -11,7 +11,7 @@ boton1.addEventListener('click', (event) => {
     const contraseña = document.getElementById('pass').value;
     const nombre1 = document.getElementById('nombre').value;
 
-    if (nombre1 === '' && contraseña === '') {
+    if (nombre1 === 'LABORATORIA' && contraseña === 'LABORATORIA') {
         pagina1.classList.add('hide');
         pagina2.classList.remove('hide');
     }
@@ -24,13 +24,16 @@ boton1.addEventListener('click', (event) => {
       }
     
     });
+
+    //finalizar login
+
 const botonAtras = document.getElementById('atras');
 botonAtras.addEventListener('click', () => {
     pagina2.classList.add('hide');
     pagina1.classList.remove('hide');
 });
 
-//main.js
+/* next*/
 
 
 const poke = (pokemon) => {//data = [{url, titulo, contenido}, {}, {}]
