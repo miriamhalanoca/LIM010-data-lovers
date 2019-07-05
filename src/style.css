@@ -4,7 +4,6 @@
     padding:0;
     }
 body{
-    
     color: black;
     background-image: url(img/bg.jpg);
     background-repeat:no-repeat;
@@ -12,13 +11,7 @@ body{
     font-family: sans-serif;
     /*min-height: 100vh;*/
     background-attachment: fixed;
-
 }
-
-
-
-
-
 .page-main{
     height: 100%;
     width: 100%;
@@ -26,9 +19,9 @@ body{
 .page-main .content-login{
     width: 100%;
     height: 100vh;
+    
     justify-content: center;
     align-items: center;
-
 }
 .login{
     background-color: rgba(166, 224, 221, 0.548);
@@ -82,8 +75,6 @@ input{
     width: 335px;
     height: 45px;
 }
-  
-    
 img{   
     height: 255px;
     width: 318px;
@@ -119,21 +110,33 @@ img{
 }
 
 .pokemon {
-    
-    
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     justify-content: space-around;
     align-content:flex-start;
-
-  }
-  
-.errorDeContraseña{
+}
+  .errorDeContraseña{
     font-family: Open;
     font-size: 15px;
     color: red;
 }
+.imagenpoke{
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+    border: 1px dotted;
+}
+/*.contentpoke{
+    background: #FFFFFF;
+    display: inline-block;
+    width: 250px;
+    border: 2px solid tomato;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 10px;
+}
+
 /*{
     margin: 0px;
     padding: 0px;
@@ -185,16 +188,8 @@ nav{
     }
     .nav-links li{
         opacity: 0;
-    }
+    }*/
 
-}
-.nombre {
-position: absolute;
-width: 335px;
-height: 210px;
-left: 20px;
-top: 204px;
-}
 
 
 
