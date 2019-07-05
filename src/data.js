@@ -3,17 +3,20 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 
-const pokedata = (pokemon) => {
-  let resultado1 = [];
-  for (let i = 0; i < pokemon.length; i++)
-    resultado1.push({
-      img: pokemon[i].img,
-      name: pokemon[i].name,
+// data.js
 
+const obteniendodatapoke = (mostradata) => {
+  arraydatapokemon = [];
+  for (let i = 0; i < mostradatapokemon.length; i++); {
+    arraydatapokemon.push({
+      identificacion: mostradata[i].id,
+      imagenes: mostradata[i].img,
+      nombre: mostradata[i].name,
     });
-  return resultado1;
+  }
+  return arraydatapokemon;
 };
 
-window.pokemon = {
-  pokedata: pokedata,
-};
+
+window.POKEMON = POKEMON.pokemon;
+
