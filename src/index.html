@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Data Lovers</title>
- <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -13,7 +14,7 @@
   </header>
 
   <main class="page-main">
-   
+    <!-- login -->
     <section class="content-login" id="pantalla1">
       <form class="login" id="loginpg">
         <img src="img/pokemon.png" />
@@ -24,54 +25,54 @@
           <input id="pass" type="password">
           <section id="error" class="errorDeContraseña"></section>
         </div>
-        
         <a>¿olvidastes tu contraseña?</a>
-        <button id="btn" type="submit">iniciar sesion</button>
+        <button id="btn" type="button">iniciar sesion</button>
         <p>¿No tienes una cuenta? Registrate</p>
       </form>
     </section>
-    
-    <section id="pantalla2"  >
-       <button id="atras" type="submit">INICIO</button>
-      <select id="selecionar">
-          <option value="">POR ORDEN </option>
-          <option id="a" value="A">A-Z</option>
-          <option value="B">Z-A</option>
-          <option value="C">MENOR-MAYOR</option>
-          <option value="D">MAYOR-MENOR</option>
-        </select>
-      
-    <select id="type">
-      <option value="00">FILTRAR POR</option>
-      <option value="01">Agua</option>
-      <option value="02">Bicho</option>
-      <option value="03">Dragon</option>
-      <option value="04">Electrico</option>
-      <option value="04">Fantasma</option>
-      <option value="05">Fuego</option>
-      <option value="06">Hielo</option>
-      <option value="07">Lucha</option>
-      <option value="08">Normal</option>
-      <option value="09">Hierba</option>
-      <option value="10">Psiquico</option>
-      <option value="11">Roca</option>
-      <option value="12">Tierra</option>
-      <option value="13">Veneno</option>
-      <option value="14">Volador</option>
-    </select>
-            <select id="pet-select">
-                <option value="">HUEVOS A ECLOSIONAR</option>
-                <option value="E">----</option>
-              </select>
-              
-              <div id="pokemon12" class="pokemon"></div>
-            
-  </section>
+
+    <section id="pantalla2">
+      <button id="atras" type="submit">INICIO</button>
+      <select id="pet-select">
+        <option>POR ORDEN </option>
+        <option>A-Z</option>
+        <option>Z-A</option>
+        <option>MENOR-MAYOR</option>
+        <option>MAYOR-MENOR</option>
+      </select>
+
+      <select id="type">
+        <option >FILTRAR POR</option>
+        <option >Agua</option>
+        <option >Bicho</option>
+        <option >Dragon</option>
+        <option value="04">Electrico</option>
+        <option value="04">Fantasma</option>
+        <option value="05">Fuego</option>
+        <option value="06">Hielo</option>
+        <option value="07">Lucha</option>
+        <option value="08">Normal</option>
+        <option value="09">Hierba</option>
+        <option value="10">Psiquico</option>
+        <option value="11">Roca</option>
+        <option value="12">Tierra</option>
+        <option value="13">Veneno</option>
+        <option value="14">Volador</option>
+      </select>
+      <select id="pet-select">
+        <option value="">HUEVOS A ECLOSIONAR</option>
+        <option value="E">----</option>
+      </select>
+
+      <div id="pokemon12" class="pokemon">
+        
+      </div>
+
+    </section>
   </main>
   <footer></footer>
   <!-- <script src="./data/lol/lol.js"></script> -->
   <script src="./data/pokemon/pokemon.js"></script>
-
   <!-- <script src="./data/worldbank/worldbank.js"></script> -->
   <script src="data.js"></script>
   <script src="main.js"></script>
