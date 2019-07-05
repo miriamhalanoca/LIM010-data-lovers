@@ -1,77 +1,16 @@
-    
+  
 *{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-nav{
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 8vh;
-    background-color: #5D4954;
-    font-family: 'Poppins', sans-serif;
-}
-.logo{
-    color:rgb(226,226,226);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: bold;
-    font-size: 14px;
-}
-.burger div{
-    width: 25px;
-    height: 5px;
-    color: rgb(226,226,226);
-    margin: 5px;
-}
-@media screen and (max-width:1024px){
-    .nav-links{
-        width: 60%;
+    margin:0; 
+    padding:0;
     }
-}
-
-@media screen and (max-width:768px){
-    body{
-        overflow: hidden;
-
-    }
-    .nav-links{
-        position: absolute;
-        right: 0px;
-        height: 92vh;
-        top: 8vh;
-        background-color: #5D4954;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 50%;
-        transform: translateX(100%); 
-    }
-    .nav-links li{
-        opacity: 0;
-    }
-
-}
-.nombre {
-position: absolute;
-width: 335px;
-height: 210px;
-left: 20px;
-top: 204px;
-}
-
-
 body{
-    
     color: black;
     background-image: url(img/bg.jpg);
     background-repeat:no-repeat;
     background-size: 100% 100%;
     font-family: sans-serif;
-   /* min-height: 100vh;*/
+    /*min-height: 100vh;*/
     background-attachment: fixed;
-
 }
 .page-main{
     height: 100%;
@@ -83,9 +22,19 @@ body{
     
     justify-content: center;
     align-items: center;
-
 }
 .login{
+    background-color: rgba(166, 224, 221, 0.548);
+   border-radius: 5px;
+   padding: 17px;
+   width: 500px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   -webkit-box-shadow: 10px 10px 5px 5px rgba(94, 93, 93, 0.75);
+   -moz-box-shadow: 10px 10px 5px 5px rgba(94, 93, 93, 0.75);
+   box-shadow: 10px 10px 5px 5px rgba(94, 93, 93, 0.75);
     display: flex;
     flex-flow: column wrap;
     height: 600px;
@@ -126,8 +75,6 @@ input{
     width: 335px;
     height: 45px;
 }
-  
-    
 img{   
     height: 255px;
     width: 318px;
@@ -161,8 +108,16 @@ img{
  .hide{
     display: none;
 }
-.errorDeContraseña{
-    font-family: Open Sans;
+
+.pokemon {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-around;
+    align-content:flex-start;
+}
+  .errorDeContraseña{
+    font-family: Open;
     font-size: 15px;
     color: red;
 }
@@ -171,6 +126,15 @@ img{
     vertical-align: middle;
     width: 50%;
     border: 1px dotted;
+}
+/*.contentpoke{
+    background: #FFFFFF;
+    display: inline-block;
+    width: 250px;
+    border: 2px solid tomato;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 10px;
 }
 
 /*{
@@ -224,7 +188,7 @@ nav{
     }
     .nav-links li{
         opacity: 0;
-    }
+    }*/
 
 
 

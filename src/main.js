@@ -4,6 +4,7 @@ const pagina2 = document.getElementById('pantalla2');
 const boton1 = document.getElementById('btn');
 const pantalla2 = document.getElementById('pokemon12');
 const ordenAZ = document.getElementById('pet-select');
+const tipos = document.getElementById('type');
 const pokedata = POKEMON.pokemon;
 let contador = 0;
 /* login */
@@ -32,10 +33,23 @@ const poke = (pokemon) => {
   let almacenar = ' ';
   for (let i = 0; i < pokemon.length; i++) {
     let item = `
-      <div>
+      <div class="contentpoke">
       <img src="${pokemon[i].img}"/>
-      <p> nombre=${pokemon[i].name}</p>
-      <p> identificacion=${pokemon[i].id}</p>
+      <p>${pokemon[i].name}</p>
+      <p>${pokemon[i].num}</p>
+      <p>${pokemon[i].id}</p>
+      <p>${pokemon[i].type}</p>
+      <p>${pokemon[i].height}</p>
+      <p>${pokemon[i].weight}</p>
+      <p>${pokemon[i].candy}</p>
+      <p>${pokemon[i].candy_count}</p>
+      <p>${pokemon[i].egg}</p>
+      <p>${pokemon[i].spawn_chance}</p>
+      <p>${pokemon[i].avg_spawns}</p>
+      <p>${pokemon[i].spawn_time}</p>
+      <p>${pokemon[i].multipliers}</p>
+      <p>${pokemon[i].weaknesses}</p>
+      <p>${pokemon[i].next_evolution}</p>
       </div>`;
     almacenar += item;
   }
@@ -80,3 +94,20 @@ ordenAZ.addEventListener('change', (event) => {
     pokemon12.innerHTML = poke(ordenar1);
   }
 });
+const tipospoke = () => {
+  let listatipos = [];
+  for (let i = 0; i < pokedata; i++) {
+    listatipos.push(pokedata[i].type);
+  }
+  return listatipos;
+};
+
+
+type.addEventListener('change', (event) => {
+  if ('Agua' === type.value) {
+    const ordenar2 = tipospoke();
+    pokemon12.innerHTML = poke(ordenar2);
+  }
+});
+
+

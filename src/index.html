@@ -12,6 +12,7 @@
   <header>
     <h1> </h1>
   </header>
+
   <main class="page-main">
     <!-- login -->
     <section class="content-login" id="pantalla1">
@@ -29,27 +30,44 @@
         <p>¿No tienes una cuenta? Registrate</p>
       </form>
     </section>
-    <!--selectores de filtros-->
+
     <section id="pantalla2">
-      <form class="pantalla-poke">
-        <button id="atras" type="submit">INICIO</button>
-        <select id="pet-select">
-          <option>POR ORDEN </option>
-          <option>A-Z</option>
-          <option>Z-A</option>
-          <option>MENOR-MAYOR</option>
-          <option>MAYOR-MENOR</option>
-        </select>
-        <select id="pet-select1">
-          <option>FILTRAR</option>
-          <option>POR PODERES </option>
-        </select>
-        <select id="pet-select2">
-          <option value="">HUEVOS A ECLOSIONAR</option>
-          <option value="E">----</option>
-        </select>
-        <div class="imagenpoke" id="pokemon12"></div>
-      </form>
+      <button id="atras" type="submit">INICIO</button>
+      <select id="pet-select">
+        <option>POR ORDEN </option>
+        <option>A-Z</option>
+        <option>Z-A</option>
+        <option>MENOR-MAYOR</option>
+        <option>MAYOR-MENOR</option>
+      </select>
+
+      <select id="type">
+        <option >FILTRAR POR</option>
+        <option >Agua</option>
+        <option >Bicho</option>
+        <option >Dragon</option>
+        <option value="04">Electrico</option>
+        <option value="04">Fantasma</option>
+        <option value="05">Fuego</option>
+        <option value="06">Hielo</option>
+        <option value="07">Lucha</option>
+        <option value="08">Normal</option>
+        <option value="09">Hierba</option>
+        <option value="10">Psiquico</option>
+        <option value="11">Roca</option>
+        <option value="12">Tierra</option>
+        <option value="13">Veneno</option>
+        <option value="14">Volador</option>
+      </select>
+      <select id="pet-select">
+        <option value="">HUEVOS A ECLOSIONAR</option>
+        <option value="E">----</option>
+      </select>
+
+      <div id="pokemon12" class="pokemon">
+        
+      </div>
+
     </section>
   </main>
   <footer></footer>
