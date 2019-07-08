@@ -5,9 +5,10 @@
 
 // data.js
 
+
 const obteniendodatapoke = (mostradata) => {
   arraydatapokemon = [];
-  for (let i = 0; i < mostradatapokemon.length; i++); {
+  for (let i = 0; i < mostradata.length; i++); {
     arraydatapokemon.push({
       numero: mostradata[i].num,
       imagenes: mostradata[i].img,
@@ -18,13 +19,10 @@ const obteniendodatapoke = (mostradata) => {
       ancho: mostradata[i].weight,
       dulces: mostradata[i].candy,
       contardulces: mostradata[i].candy_count,
-      hutvos: mostradata[i].egg,
       posibilidadesenordo: mostradata[i].spawn_chance,
-      aparicion: mostradata[i].avg_spawns,
-      tiempodegeneracion: mostradata[i].spawn_time,
       multiplicadores: mostradata[i].multipliers,
       debilidad: mostradata[i].weaknesses,
-      evolucion: mostradata[i].next_evolution,
+     
     });
   }
   return arraydatapokemon;

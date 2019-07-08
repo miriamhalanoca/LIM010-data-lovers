@@ -2,9 +2,9 @@
 const pagina1 = document.getElementById('pantalla1');
 const pagina2 = document.getElementById('pantalla2');
 const boton1 = document.getElementById('btn');
-const pantalla2 = document.getElementById('pokemon12');
+const pantalla2 = document.getElementById('contenedorPoke');
 const ordenAZ = document.getElementById('pet-select');
-const tipos = document.getElementById('type');
+const tipos = document.getElementById('tipos');
 const pokedata = POKEMON.pokemon;
 let contador = 0;
 /* login */
@@ -34,28 +34,16 @@ const poke = (pokemon) => {
   for (let i = 0; i < pokemon.length; i++) {
     let item = `
       <div class="contentpoke">
-      <img src="${pokemon[i].img}"/>
-      <p>${pokemon[i].name}</p>
-      <p>${pokemon[i].num}</p>
-      <p>${pokemon[i].id}</p>
-      <p>${pokemon[i].type}</p>
-      <p>${pokemon[i].height}</p>
-      <p>${pokemon[i].weight}</p>
-      <p>${pokemon[i].candy}</p>
-      <p>${pokemon[i].candy_count}</p>
-      <p>${pokemon[i].egg}</p>
-      <p>${pokemon[i].spawn_chance}</p>
-      <p>${pokemon[i].avg_spawns}</p>
-      <p>${pokemon[i].spawn_time}</p>
-      <p>${pokemon[i].multipliers}</p>
-      <p>${pokemon[i].weaknesses}</p>
-      <p>${pokemon[i].next_evolution}</p>
+      <img class="imagenespoke" src="${pokemon[i].img}"/>
+      <p class ="id">  ${pokemon[i].id}</p>
+      <p class ="name"> ${pokemon[i].name}</p>
+      <p class="numero"> ${pokemon[i].num}</p>
       </div>`;
     almacenar += item;
   }
   return almacenar;
 };
-pokemon12.innerHTML = poke(pokedata);
+contenedorPoke.innerHTML = poke(pokedata);
 /* ordenar de la A-Z */
 const filterpoke = () => {
   const namepoke = [];
@@ -72,7 +60,7 @@ const filterpoke = () => {
 ordenAZ.addEventListener('change', (event) => {
   if ('A-Z' === ordenAZ.value) {
     const ordenar = filterpoke();
-    pokemon12.innerHTML = poke(ordenar);
+    contenedorPoke.innerHTML = poke(ordenar);
   }
 });
 /* ordenar de Z-A */
@@ -88,26 +76,27 @@ const ordenarpokemones1 = () => {
   }
   return nombrepokemones1;
 };
-ordenAZ.addEventListener('change', (event) => {
+ordenAZ.addEventListener('change', () => {
   if ('Z-A' === ordenAZ.value) {
     const ordenar1 = ordenarpokemones1();
-    pokemon12.innerHTML = poke(ordenar1);
+    contenedorPoke.innerHTML = poke(ordenar1);
   }
 });
 const tipospoke = () => {
   let listatipos = [];
   for (let i = 0; i < pokedata; i++) {
-    listatipos.push(pokedata[i].type);
-  }
-  return listatipos;
-};
+    for (let x = 0; x < pokedata[i].type.length; x++) {
+          listatipos.push(pokedata[i].type);}
+    }
+    return listatipos;
+  };
 
 
-type.addEventListener('change', (event) => {
-  if ('Agua' === type.value) {
-    const ordenar2 = tipospoke();
-    pokemon12.innerHTML = poke(ordenar2);
-  }
-});
+  tipos.addEventListener('change', () => {
+    if (type === 'water') {
+      const ordenar2 = tipospoke();
+      contenedorPoke.innerHTML = poke(ordenar2);
+    }
+  });
 
 
