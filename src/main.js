@@ -16,7 +16,7 @@ boton1.addEventListener('click', (event) => {
     pagina2.classList.remove('hide');
   } else {
     contador = contador + 1;
-    document.getElementById('error').innerHTML = 'la contraseña incorrecta';
+    document.getElementById('error').innerHTML = 'la contraseña incorect';
     if (contador === 3) {
       document.getElementById('error').innerHTML = 'la contraseña es incorrecta vuelva a intentarlo mas tarde';
     }
@@ -81,7 +81,6 @@ ordenAZ.addEventListener('change', () => {
     contenedorPoke.innerHTML = poke(ordenar1);
   }
 });
-<<<<<<< HEAD
 const tipospoke = (data, tipos) => {
   let listatipos = [];
   for (let i = 0; i < data.length; i++) {
@@ -105,8 +104,3 @@ tipos.addEventListener('change', () => {
   
   
   
-=======
-
-
---getElementById
->>>>>>> 258a70056cd57f2e49b6223b383d5a0a7df610da
