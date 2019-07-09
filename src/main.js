@@ -16,7 +16,7 @@ boton1.addEventListener('click', (event) => {
     pagina2.classList.remove('hide');
   } else {
     contador = contador + 1;
-    document.getElementById('error').innerHTML = 'la contraseña es incorrecta';
+    document.getElementById('error').innerHTML = 'la contraseña incorrecta';
     if (contador === 3) {
       document.getElementById('error').innerHTML = 'la contraseña es incorrecta vuelva a intentarlo mas tarde';
     }
@@ -101,5 +101,6 @@ tipos.addEventListener('change', () => {
   contenedorPoke.innerHTML = poke(array);
 
 });
-
-
+  
+  
+  
