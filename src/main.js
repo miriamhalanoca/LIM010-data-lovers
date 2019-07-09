@@ -4,7 +4,6 @@ const pagina2 = document.getElementById('pantalla2');
 const boton1 = document.getElementById('btn');
 const pantalla2 = document.getElementById('contenedorPoke');
 const ordenAZ = document.getElementById('pet-select');
-const tipos = document.getElementById('tipos');
 const pokedata = POKEMON.pokemon;
 let contador = 0;
 /* login */
@@ -82,21 +81,26 @@ ordenAZ.addEventListener('change', () => {
     contenedorPoke.innerHTML = poke(ordenar1);
   }
 });
-const tipospoke = () => {
+const tipospoke = ( data,tipos) => {
   let listatipos = [];
-  for (let i = 0; i < pokedata; i++) {
-    for (let x = 0; x < pokedata[i].type.length; x++) {
-          listatipos.push(pokedata[i].type);}
+  for (let i = 0; i < data.length; i++) {
+    for (let x = 0; x < data[i].type.length; x++) {
+      if  (data[i].type[x] === tipos){
+        listatipos.push(data[i]);
+      }
+          
     }
+  }
     return listatipos;
   };
 
 
   tipos.addEventListener('change', () => {
-    if (type === 'water') {
-      const ordenar2 = tipospoke();
-      contenedorPoke.innerHTML = poke(ordenar2);
-    }
+    const tipos = document.getElementById('tipos').value;
+    let array = [];
+    array = tipospoke(pokedata,tipos);
+    contenedorPoke.innerHTML = poke(array);
+  
   });
 
 
