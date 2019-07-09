@@ -18,7 +18,7 @@ boton1.addEventListener('click', (event) => {
     contador = contador + 1;
     document.getElementById('error').innerHTML = 'la contraseña es incorrecta';
     if (contador === 3) {
-      document.getElementById('error').innerHTML = 'no se reconoce la contraseña';
+      document.getElementById('error').innerHTML = 'la contraseña es incorrecta vuelva a intentarlo mas tarde';
     }
   }
 });
