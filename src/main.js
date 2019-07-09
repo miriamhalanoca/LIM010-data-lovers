@@ -81,6 +81,7 @@ ordenAZ.addEventListener('change', () => {
     contenedorPoke.innerHTML = poke(ordenar1);
   }
 });
+<<<<<<< HEAD
 const tipospoke = (data, tipos) => {
   let listatipos = [];
   for (let i = 0; i < data.length; i++) {
@@ -104,3 +105,8 @@ tipos.addEventListener('change', () => {
   
   
   
+=======
+
+
+--getElementById
+>>>>>>> 258a70056cd57f2e49b6223b383d5a0a7df610da
