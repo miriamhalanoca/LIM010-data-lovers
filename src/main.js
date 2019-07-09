@@ -82,5 +82,3 @@ ordenAZ.addEventListener('change', () => {
   }
 });
 
-
---getElementById
