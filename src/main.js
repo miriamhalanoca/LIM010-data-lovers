@@ -4,7 +4,7 @@ const pagina2 = document.getElementById('pantalla2');
 const boton1 = document.getElementById('btn');
 const pantalla2 = document.getElementById('pokemon12');
 const ordenAZ = document.getElementById('pet-select');
-const tipos = document.getElementById('type');
+const tipos = document.getElementById('tipos');
 const pokedata = POKEMON.pokemon;
 let contador = 0;
 /* login */
@@ -92,22 +92,30 @@ ordenAZ.addEventListener('change', (event) => {
   if ('Z-A' === ordenAZ.value) {
     const ordenar1 = ordenarpokemones1();
     pokemon12.innerHTML = poke(ordenar1);
+
+
+
   }
 });
-const tipospoke = () => {
+
+/*const tipospoke = (poke, data) => {
   let listatipos = [];
-  for (let i = 0; i < pokedata; i++) {
-    listatipos.push(pokedata[i].type);
+  for (let i = 0; i < poke.length; i++) {
+    for (let y = 0; y < poke[i].type.length; y++) {
+      if (poke[i] === data) {
+        listatipos.push(poke[i]);
+      }
+    }
   }
   return listatipos;
 };
-
-
-type.addEventListener('change', (event) => {
-  if ('Agua' === type.value) {
+tipos.addEventListener('change', () => {
+  if ('agua' === tipos.value) {
     const ordenar2 = tipospoke();
     pokemon12.innerHTML = poke(ordenar2);
   }
-});
+});*/
+
+
 
 
