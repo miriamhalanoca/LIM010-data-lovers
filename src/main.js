@@ -95,6 +95,8 @@ const tipospoke = ( data,tipos) => {
   };
 
 
+  
+
   tipos.addEventListener('change', () => {
     const tipos = document.getElementById('tipos').value;
     let array = [];
