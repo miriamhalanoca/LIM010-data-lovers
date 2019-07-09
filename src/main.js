@@ -81,28 +81,5 @@ ordenAZ.addEventListener('change', () => {
     contenedorPoke.innerHTML = poke(ordenar1);
   }
 });
-const tipospoke = ( data,tipos) => {
-  let listatipos = [];
-  for (let i = 0; i < data.length; i++) {
-    for (let x = 0; x < data[i].type.length; x++) {
-      if  (data[i].type[x] === tipos){
-        listatipos.push(data[i]);
-      }
-          
-    }
-  }
-    return listatipos;
-  };
-
-
-  
-
-  tipos.addEventListener('change', () => {
-    const tipos = document.getElementById('tipos').value;
-    let array = [];
-    array = tipospoke(pokedata,tipos);
-    contenedorPoke.innerHTML = poke(array);
-  
-  });
 
 
