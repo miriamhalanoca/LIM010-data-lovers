@@ -3,7 +3,7 @@ const pagina1 = document.getElementById('pantalla1');
 const pagina2 = document.getElementById('pantalla2');
 const boton1 = document.getElementById('btn');
 const pantalla2 = document.getElementById('contenedorPoke');
-const ordenAZ = document.getElementById('pet-select');
+const ordenAZ = document.getElementById('ordenar');
 const pokedata = POKEMON.pokemon;
 let contador = 0;
 /* login */
@@ -13,6 +13,7 @@ boton1.addEventListener('click', (event) => {
   const nombre1 = document.getElementById('nombre').value;
   if (nombre1 === '' && contraseña === '') {
     pagina1.classList.add('hide');
+
     pagina2.classList.remove('hide');
   } else {
     contador = contador + 1;
@@ -37,12 +38,74 @@ const poke = (pokemon) => {
       <p class ="id">  ${pokemon[i].id}</p>
       <p class ="name"> ${pokemon[i].name}</p>
       <p class="numero"> ${pokemon[i].num}</p>
+      <p class="huevo"> ${pokemon[i].egg}</p>
       </div>`;
     almacenar += item;
   }
   return almacenar;
 };
 contenedorPoke.innerHTML = poke(pokedata);
+
+
+/*filtrar todos los pokemones por poder */
+
+const tipospoke = (data, tipos) => {
+  let listatipos = [];
+  for (let i = 0; i < data.length; i++) {
+    for (let x = 0; x < data[i].type.length; x++) {
+      if (data[i].type[x] === tipos) {
+        listatipos.push(data[i]);
+      }
+
+    }
+  }
+  return listatipos;
+};
+
+
+
+tipos.addEventListener('change', () => {
+  const tipos = document.getElementById('tipos').value;
+  let array = [];
+  array = tipospoke(pokedata, tipos);
+  contenedorPoke.innerHTML = poke(array);
+
+});
+
+
+/*ordenar de MENOR A MAYOR*/
+
+/*filtrar por acendente a descendente */
+
+const descendente = (data, ordenar1) => {
+
+  const ordenarMayorMenor = data.sort((a, b) => {
+    if (a.spawn_chance > b.spawn_chance) {
+      return 1;
+    }
+    if (a.spawn_chance < b.spawn_chance) {
+      return -1;
+    }
+    return 0;
+
+  });
+  if (ordenar1 === '1') {
+    return ordenarMayorMenor;
+  }
+  if (ordenar1 === '2') {
+    return ordenarMayorMenor.reverse();
+  }
+  return 0;
+};
+tipo.addEventListener('change', () => {
+  const ordenar1 = document.getElementById('tipo').value;
+  let arrai = [];
+  arrai = descendente(pokedata, ordenar1);
+  contenedorPoke.innerHTML = poke(arrai);
+
+});
+
+
 /* ordenar de la A-Z */
 const filterpoke = () => {
   const namepoke = [];
@@ -56,7 +119,7 @@ const filterpoke = () => {
   }
   return namepoke;
 };
-ordenAZ.addEventListener('change', (event) => {
+ordenAZ.addEventListener('change', () => {
   if ('A-Z' === ordenAZ.value) {
     const ordenar = filterpoke();
     contenedorPoke.innerHTML = poke(ordenar);
@@ -81,26 +144,29 @@ ordenAZ.addEventListener('change', () => {
     contenedorPoke.innerHTML = poke(ordenar1);
   }
 });
-const tipospoke = (data, tipos) => {
-  let listatipos = [];
-  for (let i = 0; i < data.length; i++) {
-    for (let x = 0; x < data[i].type.length; x++) {
-      if (data[i].type[x] === tipos) {
-        listatipos.push(data[i]);
-      }
 
+
+const eclosionar = (data,huevo) => {
+  let evolucionar = [];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].egg === huevo) {
+      evolucionar.push([i]);
     }
   }
-  return listatipos;
+  return evolucionar;
+
 };
 
-tipos.addEventListener('change', () => {
-  const tipos = document.getElementById('tipos').value;
-  let array = [];
-  array = tipospoke(pokedata, tipos);
-  contenedorPoke.innerHTML = poke(array);
+
+
+
+eclosionar.addEventListener('change', () => {
+  const huevo1 = document.getElementById('eclosionar').value;
+  let newarray = [];
+  newarray = eclosionar(pokedata,huevo);
+  contenedorPoke.innerHTM = poke(newarray);
 
 });
-  
-  
-  
+
+//((evolucionar.length * 100) / pokedata.length + '%');
+
