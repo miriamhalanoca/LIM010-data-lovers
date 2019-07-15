@@ -24,15 +24,14 @@ Es un producto dirigido a usuarios que quieren entrar al mundo de los pokemones 
 ## imagen
 ------
 ## necesidades de dichos usuarios.
-Interacción social: Ser parte de un gran grupo de compañeros de juego y las interacciones sociales que esto ofrece, son parte de las razones claves que llevan a una persona a jugar.
-manejo del control del juego : Los jugadores quieren un control total de todos los aspectos de su experiencia de juego, desde la ergonomía hasta la usabilidad. Adoptarán fácilmente dispositivos que les permitan alcanzar este objetivo.
+las necesidades que ellos tienen es saber mas sobre que pokemones quieren  capturar y cual es el rango de poder que tienen cada uno y cual usarian en una batalla 
 
 
 ## investigacio-ux
 
 
 ## objetivos
-nuestro objetivo es llegar a todo un publico en general y que se enganche con nuestro juego y  se pueda familiarizar y entretener de una manera saludable.  
+el objetivo es mostrar las caracteristicas de cada pokemon para que   
 
 ## solucion
 
