@@ -2,10 +2,16 @@
 const pagina1 = document.getElementById('pantalla1');
 const pagina2 = document.getElementById('pantalla2');
 const boton1 = document.getElementById('btn');
+const botonAtras = document.getElementById('atras');
 const pantalla2 = document.getElementById('contenedorPoke');
 const ordenAZ = document.getElementById('ordenar');
+const tipos = document.getElementById('tipos');
+const direccionOrdenado = document.getElementById('direccion-ordenado');
+const seleccionarHuevo = document.getElementById('eclosionar');
 const pokedata = POKEMON.pokemon;
 let contador = 0;
+
+
 /* login */
 boton1.addEventListener('click', (event) => {
   event.preventDefault();
@@ -13,7 +19,6 @@ boton1.addEventListener('click', (event) => {
   const nombre1 = document.getElementById('nombre').value;
   if (nombre1 === '' && contraseña === '') {
     pagina1.classList.add('hide');
-
     pagina2.classList.remove('hide');
   } else {
     contador = contador + 1;
@@ -23,11 +28,13 @@ boton1.addEventListener('click', (event) => {
     }
   }
 });
-const botonAtras = document.getElementById('atras');
+
+
 botonAtras.addEventListener('click', () => {
   pagina2.classList.add('hide');
   pagina1.classList.remove('hide');
 });
+
 /* main */
 const poke = (pokemon) => {
   let almacenar = ' ';
@@ -46,79 +53,24 @@ const poke = (pokemon) => {
 };
 contenedorPoke.innerHTML = poke(pokedata);
 
-
-/*filtrar todos los pokemones por poder */
-
-const tipospoke = (data, tipos) => {
-  let listatipos = [];
-  for (let i = 0; i < data.length; i++) {
-    for (let x = 0; x < data[i].type.length; x++) {
-      if (data[i].type[x] === tipos) {
-        listatipos.push(data[i]);
-      }
-
-    }
-  }
-  return listatipos;
-};
-
-
-
-tipos.addEventListener('change', () => {
-  const tipos = document.getElementById('tipos').value;
-  let array = [];
-  array = tipospoke(pokedata, tipos);
-  contenedorPoke.innerHTML = poke(array);
-
+/*filtrar todos los pokemones por tipos */
+tipos.addEventListener('change', (event) => {
+  const tipoSeleccionado = event.target.value;
+  let newarray = [];
+  newarray = tipospoke(pokedata, tipoSeleccionado);
+  contenedorPoke.innerHTML = poke(newarray);
 });
-
-
-/*ordenar de MENOR A MAYOR*/
 
 /*filtrar por acendente a descendente */
-
-const descendente = (data, ordenar1) => {
-
-  const ordenarMayorMenor = data.sort((a, b) => {
-    if (a.spawn_chance > b.spawn_chance) {
-      return 1;
-    }
-    if (a.spawn_chance < b.spawn_chance) {
-      return -1;
-    }
-    return 0;
-
-  });
-  if (ordenar1 === '1') {
-    return ordenarMayorMenor;
-  }
-  if (ordenar1 === '2') {
-    return ordenarMayorMenor.reverse();
-  }
-  return 0;
-};
-tipo.addEventListener('change', () => {
-  const ordenar1 = document.getElementById('tipo').value;
-  let arrai = [];
-  arrai = descendente(pokedata, ordenar1);
-  contenedorPoke.innerHTML = poke(arrai);
-
+direccionOrdenado.addEventListener('change', () => {
+  const ordenar1 = direccionOrdenado.value;
+  console.log(ordenar1);
+  let array = [];
+  array = descendente(pokedata, ordenar1);
+  contenedorPoke.innerHTML = poke(array);
 });
 
-
 /* ordenar de la A-Z */
-const filterpoke = () => {
-  const namepoke = [];
-  const arrAZ = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  for (let i = 0; i < arrAZ.length; i++) {
-    for (let x = 0; x < pokedata.length; x++) {
-      if (arrAZ[i] === pokedata[x].name[0]) {
-        namepoke.push(pokedata[x]);
-      }
-    }
-  }
-  return namepoke;
-};
 ordenAZ.addEventListener('change', () => {
   if ('A-Z' === ordenAZ.value) {
     const ordenar = filterpoke();
@@ -126,18 +78,6 @@ ordenAZ.addEventListener('change', () => {
   }
 });
 /* ordenar de Z-A */
-const ordenarpokemones1 = () => {
-  const nombrepokemones1 = [];
-  const arrayordenAZ1 = ['Z', 'Y', 'X', 'W', 'V', 'U', 'T', 'S', 'R', 'Q', 'P', 'O', 'N', 'M', 'L', 'K', 'J', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A'];
-  for (let i = 0; i < arrayordenAZ1.length; i++) {
-    for (let j = 0; j < pokedata.length; j++) {
-      if (arrayordenAZ1[i] === pokedata[j].name[0]) {
-        nombrepokemones1.push(pokedata[j]);
-      }
-    }
-  }
-  return nombrepokemones1;
-};
 ordenAZ.addEventListener('change', () => {
   if ('Z-A' === ordenAZ.value) {
     const ordenar1 = ordenarpokemones1();
@@ -145,28 +85,15 @@ ordenAZ.addEventListener('change', () => {
   }
 });
 
-
-const eclosionar = (data,huevo) => {
-  let evolucionar = [];
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].egg === huevo) {
-      evolucionar.push([i]);
-    }
-  }
-  return evolucionar;
-
-};
-
-
-
-
-eclosionar.addEventListener('change', () => {
-  const huevo1 = document.getElementById('eclosionar').value;
-  let newarray = [];
-  newarray = eclosionar(pokedata,huevo);
-  contenedorPoke.innerHTM = poke(newarray);
-
+/*  eclosionar huevos */
+ seleccionarHuevo.addEventListener('change', (event) => {
+  const huevo = event.target.value;
+  let array = [];
+  array = huevosfilter(pokedata, huevo);
+  contenedorPoke.innerHTML = poke(array);
 });
 
-//((evolucionar.length * 100) / pokedata.length + '%');
-
+const mostrarPorcentaje=document.getElementById("concatenar");
+let porcentaje = [];
+  array = huevosfilter(pokedata, huevo);
+  contenedorPoke.innerHTML = poke(array);
