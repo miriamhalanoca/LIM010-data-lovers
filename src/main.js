@@ -7,6 +7,8 @@ const ordenAZ = document.getElementById('ordenar');
 const buscador = document.getElementById('botonbuscar');
 const namebuscador = document.getElementById('nombre');
 // const botoneclosionar = document.getElementById('petSelect1');
+const pantalla2 = document.getElementById('contenedorPoke');
+const ordenAZ = document.getElementById('ordenar');
 const pokedata = POKEMON.pokemon;
 let contador = 0;
 /* login */
@@ -16,6 +18,7 @@ boton1.addEventListener('click', (event) => {
   const nombre1 = document.getElementById('nombre').value;
   if (nombre1 === '' && contraseña === '') {
     pagina1.classList.add('hide');
+
     pagina2.classList.remove('hide');
   } else {
     contador = contador + 1;
@@ -106,17 +109,24 @@ const tipospoke = (data, tipos) => {
   }
   return listatipos;
 };
-tipos.addEventListener('change', (event) => {
-  const tipos = event.target.value;
 
-  //  document.getElementById('tipos').value;
+
+
+tipos.addEventListener('change', () => {
+  const tipos = document.getElementById('tipos').value;
   let array = [];
   array = tipospoke(pokedata, tipos);
   contenedorPoke.innerHTML = poke(array);
+
 });
-/* filtrar por acendente a descendente  */
+
+
+/*ordenar de MENOR A MAYOR*/
+
+/*filtrar por acendente a descendente */
+
 const descendente = (data, ordenar1) => {
-  // eslint-disable-next-line id-length
+
   const ordenarMayorMenor = data.sort((a, b) => {
     if (a.spawn_chance > b.spawn_chance) {
       return 1;
@@ -139,7 +149,9 @@ tipo.addEventListener('change', () => {
   let arrai = [];
   arrai = descendente(pokedata, ordenar1);
   contenedorPoke.innerHTML = poke(arrai);
+
 });
+
 
 /* ordenar de la A-Z */
 const filterpoke = () => {
@@ -154,7 +166,7 @@ const filterpoke = () => {
   }
   return namepoke;
 };
-ordenAZ.addEventListener('change', (event) => {
+ordenAZ.addEventListener('change', () => {
   if ('A-Z' === ordenAZ.value) {
     const ordenar = filterpoke();
     contenedorPoke.innerHTML = poke(ordenar);
@@ -179,37 +191,32 @@ ordenAZ.addEventListener('change', () => {
     contenedorPoke.innerHTML = poke(ordenar1);
   }
 });
-const huevosfilter = (kilometros) => {
-  const filtrarhuevos = pokedata.filter(pokedata1 => pokedata1.egg === kilometros);
-  console.log(filtrarhuevos);
+
+
+const eclosionar = (data,huevo) => {
+  let evolucionar = [];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].egg === huevo) {
+      evolucionar.push([i]);
+    }
+  }
+  return evolucionar;
+
 };
 huevosfilter('10 km');
 
 
+
+
+eclosionar.addEventListener('change', () => {
+  const huevo1 = document.getElementById('eclosionar').value;
+  let newarray = [];
+  newarray = eclosionar(pokedata,huevo);
+  contenedorPoke.innerHTM = poke(newarray);
+
 botoneclosionar.addEventListener('change', (event) => {
   const eclosionar = event.target.value;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 });
-contenedorPoke.innerHTML = poke(eclosionar);
 
+//((evolucionar.length * 100) / pokedata.length + '%');
 
-  // const containerCalcu = document.getElementById('petSelect1');
-  // containerCalcu.addEventListener('change', (event) => { 
-  //   document.getElementById('respuestas').innerHTML = (window.POKE.computeStats(dataPoke, event.target.getAttribute('value')));
-
-
-
-
-// console.log(huevosfilter(event.target.value));
-// let filtrarhuevos = [];
-// filtrarhuevos = huevosfilter(pokedata, eclosionar);
-// console.log(filtrarhuevos);
-
-
-// const neweclosionar = huevosfilter(pokedata, eclosionar);
-
-
-
-
-
-//const filtrarhuevos = pokedata.filter(pokedata1 => pokedata1.egg === '5 km');
-//console.log(filtrarhuevos);

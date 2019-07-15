@@ -23,7 +23,8 @@ const obteniendodatapoke = (mostradata) => {
       posibilidadesenordo: mostradata[i].spawn_chance,
       multiplicadores: mostradata[i].multipliers,
       debilidad: mostradata[i].weaknesses,
-
+      huevo1: mostradata[i].egg,
+     
     });
   }
   return arraydatapokemon;
