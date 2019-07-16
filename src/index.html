@@ -20,9 +20,9 @@
         <img src="img/pokemon.png" />
         <div class="form-item">
           <label>correo electronico</label>
-          <input id="nombre" type="text">
+          <input id="nombre" type="text"  placeholder="ingrese usuario">
           <label>contraseña</label>
-          <input id="pass" type="password">
+          <input id="pass" type="password"   placeholder="ingrese su contraseña">
           <section id="error" class="errorDeContraseña"></section>
         </div>
         <a>¿olvidastes tu contraseña?</a>
@@ -31,9 +31,9 @@
       </form>
     </section>
 
-  
+
     <section id="pantalla2" class="deseño1">
-      
+        <form class="segundaPantalla" id="segundaPantalla">
         <section class="diseño">
             <select id="ordenar" >
              <option>POR ORDEN </option>
@@ -42,8 +42,8 @@
            </select>
              <select id="direccion-ordenado" >
              <option>POR ORDEN </option>
-             <option value="1">MAYOR-MENOR</option>
-             <option value="2">MENOR-MAYOR</option>
+             <option value="spawn_chance">MAYOR-MENOR</option>
+             <option value="spawn_chance">MENOR-MAYOR</option>
            </select>
 
       <select id="tipos">
@@ -76,7 +76,7 @@
       <div id="contenedorPoke" class="pokemon"></div>
       <button id="atras"  class="botonInicio" pe="submit" >INICIO</button>
     </section>
-  
+  </form>
   </main>
   <footer></footer>
   <!-- <script src="./data/lol/lol.js"></script> -->

@@ -42,6 +42,9 @@ const tipospoke = (data, tipo) => {
   return listatipos;
 };
 
+
+
+
 /*filtrar por acendente a descendente */
 const descendente = (data, ordenar1) => {
   const ordenarMayorMenor = data.sort((a, b) => {
@@ -62,6 +65,8 @@ const descendente = (data, ordenar1) => {
   }
   return 0;
 };
+
+
 
 /* ordenar de la A-Z */
 const filterpoke = () => {

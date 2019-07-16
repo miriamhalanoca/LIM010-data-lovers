@@ -66,9 +66,12 @@ direccionOrdenado.addEventListener('change', () => {
   const ordenar1 = direccionOrdenado.value;
   console.log(ordenar1);
   let array = [];
-  array = descendente(pokedata, ordenar1);
+  array = ascendente(pokedata, ordenar1);
   contenedorPoke.innerHTML = poke(array);
 });
+
+
+
 
 /* ordenar de la A-Z */
 ordenAZ.addEventListener('change', () => {
@@ -93,7 +96,4 @@ ordenAZ.addEventListener('change', () => {
   contenedorPoke.innerHTML = poke(array);
 });
 
-const mostrarPorcentaje=document.getElementById("concatenar");
-let porcentaje = [];
-  array = huevosfilter(pokedata, huevo);
-  contenedorPoke.innerHTML = poke(array);
+
