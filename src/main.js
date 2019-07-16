@@ -1,9 +1,10 @@
+
 /* Manejo del DOM */
 const pagina1 = document.getElementById('pantalla1');
 const pagina2 = document.getElementById('pantalla2');
 const boton1 = document.getElementById('btn');
 const botonAtras = document.getElementById('atras');
-const pantalla2 = document.getElementById('contenedorPoke');
+const encontrarPoke = document.getElementById('buscador');
 const ordenAZ = document.getElementById('ordenar');
 const tipos = document.getElementById('tipos');
 const direccionOrdenado = document.getElementById('direccion-ordenado');
@@ -29,7 +30,7 @@ boton1.addEventListener('click', (event) => {
   }
 });
 
-
+/* boton de regreso a inicio */
 botonAtras.addEventListener('click', () => {
   pagina2.classList.add('hide');
   pagina1.classList.remove('hide');
@@ -53,7 +54,7 @@ const poke = (pokemon) => {
 };
 contenedorPoke.innerHTML = poke(pokedata);
 
-/*filtrar todos los pokemones por tipos */
+/* filtrar todos los pokemones por tipos */
 tipos.addEventListener('change', (event) => {
   const tipoSeleccionado = event.target.value;
   let newarray = [];
@@ -61,7 +62,7 @@ tipos.addEventListener('change', (event) => {
   contenedorPoke.innerHTML = poke(newarray);
 });
 
-/*filtrar por acendente a descendente */
+/* filtrar por acendente a descendente */
 direccionOrdenado.addEventListener('change', () => {
   const ordenar1 = direccionOrdenado.value;
   console.log(ordenar1);
@@ -86,14 +87,41 @@ ordenAZ.addEventListener('change', () => {
 });
 
 /*  eclosionar huevos */
- seleccionarHuevo.addEventListener('change', (event) => {
-  const huevo = event.target.value;
+seleccionarHuevo.addEventListener('change', (event) => {
+  const eggspoke = event.target.value;
   let array = [];
-  array = huevosfilter(pokedata, huevo);
+  array = huevosfilter(pokedata, eggspoke);
   contenedorPoke.innerHTML = poke(array);
+  document.getElementById('porcentaje').innerHTML = `el porcentaje de ${eggspoke} es : ${((array.length) / 151 * 100).toFixed(2)} %`;
 });
 
-const mostrarPorcentaje=document.getElementById("concatenar");
-let porcentaje = [];
-  array = huevosfilter(pokedata, huevo);
-  contenedorPoke.innerHTML = poke(array);
+/* buscar pokemones */
+encontrarPoke.addEventListener('input', (event) => {
+  const pokeBusca = event.target.value.toLowerCase();
+  const pokebuscado = buscador(pokedata, pokeBusca);
+  contenedorPoke.innerHTML = poke(pokebuscado);
+});
+
+/* Modal */
+// const pantalla2 = document.getElementById('contenedorPoke');
+// /* al contenedor le agrego un evento clik */
+// pantalla2.addEventListener('click', () => {
+//   const pokecito = event.target.parentElement.id - 1;
+//   console.log(pokecito);
+//   /* Pongo condicional que si el atributo name  del padre de ese elemento es pokemon, muestra modal e inserta datos del pokemon */
+//   if (event.target.parentElement.getAttribute('name') === 'pokemon') {
+//     /* Muestra modal */
+//     document.getElementById('my-modal').classList.remove('ocultar');
+//     /* Insertar info de pokemon en Modal */
+//     document.getElementById('caracteristicas').innerHTML = `
+// <img class="imagenModal" src="${pokedata[pokecito].img}"/>
+// <p> Nombre:${pokedata[pokecito].name}</p>
+// <p>Peso: ${pokedata[pokecito].weight}</p>
+// <p>Altura: ${pokedata[pokecito].height}</p>
+// <p>Tipo: ${pokedata[pokecito].type}</p> `;
+//   }
+// });
+// document.getElementById('close').addEventListener('click', () => {
+//   document.getElementById('my-modal').classList.add('ocultar');
+//  });
+
