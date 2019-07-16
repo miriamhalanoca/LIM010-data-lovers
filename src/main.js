@@ -1,16 +1,18 @@
+
 /* Manejo del DOM */
 const pagina1 = document.getElementById('pantalla1');
 const pagina2 = document.getElementById('pantalla2');
 const boton1 = document.getElementById('btn');
-
+const botonAtras = document.getElementById('atras');
+const encontrarPoke = document.getElementById('buscador');
 const ordenAZ = document.getElementById('ordenar');
-const buscador = document.getElementById('botonbuscar');
-const namebuscador = document.getElementById('nombre');
-// const botoneclosionar = document.getElementById('petSelect1');
-const pantalla2 = document.getElementById('contenedorPoke');
-const ordenAZ = document.getElementById('ordenar');
+const tipos = document.getElementById('tipos');
+const direccionOrdenado = document.getElementById('direccion-ordenado');
+const seleccionarHuevo = document.getElementById('eclosionar');
 const pokedata = POKEMON.pokemon;
 let contador = 0;
+
+
 /* login */
 boton1.addEventListener('click', (event) => {
   event.preventDefault();
@@ -18,7 +20,6 @@ boton1.addEventListener('click', (event) => {
   const nombre1 = document.getElementById('nombre').value;
   if (nombre1 === '' && contraseña === '') {
     pagina1.classList.add('hide');
-
     pagina2.classList.remove('hide');
   } else {
     contador = contador + 1;
@@ -28,15 +29,83 @@ boton1.addEventListener('click', (event) => {
     }
   }
 });
-const botonAtras = document.getElementById('atras');
+
+/* boton de regreso a inicio */
 botonAtras.addEventListener('click', () => {
   pagina2.classList.add('hide');
   pagina1.classList.remove('hide');
 });
-// /* Modal */
-// const contenedorPokecito = document.getElementById('contenedorPoke');
+
+/* main */
+const poke = (pokemon) => {
+  let almacenar = ' ';
+  for (let i = 0; i < pokemon.length; i++) {
+    let item = `
+      <div class="contentpoke">
+      <img class="imagenespoke" src="${pokemon[i].img}"/>
+      <p class ="id">  ${pokemon[i].id}</p>
+      <p class ="name"> ${pokemon[i].name}</p>
+      <p class="numero"> ${pokemon[i].num}</p>
+      <p class="huevo"> ${pokemon[i].egg}</p>
+      </div>`;
+    almacenar += item;
+  }
+  return almacenar;
+};
+contenedorPoke.innerHTML = poke(pokedata);
+
+/* filtrar todos los pokemones por tipos */
+tipos.addEventListener('change', (event) => {
+  const tipoSeleccionado = event.target.value;
+  let newarray = [];
+  newarray = tipospoke(pokedata, tipoSeleccionado);
+  contenedorPoke.innerHTML = poke(newarray);
+});
+
+/* filtrar por acendente a descendente */
+direccionOrdenado.addEventListener('change', () => {
+  const ordenar1 = direccionOrdenado.value;
+  console.log(ordenar1);
+  let array = [];
+  array = descendente(pokedata, ordenar1);
+  contenedorPoke.innerHTML = poke(array);
+});
+
+/* ordenar de la A-Z */
+ordenAZ.addEventListener('change', () => {
+  if ('A-Z' === ordenAZ.value) {
+    const ordenar = filterpoke();
+    contenedorPoke.innerHTML = poke(ordenar);
+  }
+});
+/* ordenar de Z-A */
+ordenAZ.addEventListener('change', () => {
+  if ('Z-A' === ordenAZ.value) {
+    const ordenar1 = ordenarpokemones1();
+    contenedorPoke.innerHTML = poke(ordenar1);
+  }
+});
+
+/*  eclosionar huevos */
+seleccionarHuevo.addEventListener('change', (event) => {
+  const eggspoke = event.target.value;
+  let array = [];
+  array = huevosfilter(pokedata, eggspoke);
+  contenedorPoke.innerHTML = poke(array);
+  document.getElementById('porcentaje').innerHTML = `el porcentaje de ${eggspoke} es : ${((array.length) / 151 * 100).toFixed(2)} %`;
+});
+
+/* buscar pokemones */
+encontrarPoke.addEventListener('input', (event) => {
+  const pokeBusca = event.target.value.toLowerCase();
+  const pokebuscado = buscador(pokedata, pokeBusca);
+  contenedorPoke.innerHTML = poke(pokebuscado);
+});
+
+/* Modal */
+// const pantalla2 = document.getElementById('contenedorPoke');
 // /* al contenedor le agrego un evento clik */
-// contenedorPokecito.addEventListener('click', () => {
+// pantalla2.addEventListener('click', () => {
 //   const pokecito = event.target.parentElement.id - 1;
 //   console.log(pokecito);
 //   /* Pongo condicional que si el atributo name  del padre de ese elemento es pokemon, muestra modal e inserta datos del pokemon */
@@ -52,171 +121,7 @@ botonAtras.addEventListener('click', () => {
 // <p>Tipo: ${pokedata[pokecito].type}</p> `;
 //   }
 // });
-
-// cerrando Modal
-document.getElementById('close').addEventListener('click', () => {
-  document.getElementById('my-modal').classList.add('ocultar');
-});
-/* main */
-const poke = (pokemon) => {
-  let almacenar = ' ';
-  for (let i = 0; i < pokemon.length; i++) {
-    let item = `
-      <div class="contentpoke">
-      <img class="imagenespoke" src="${pokemon[i].img}"/>
-      <p class ="id">  ${pokemon[i].id}</p>
-      <p class ="name"> ${pokemon[i].name}</p>
-      <p class="numero"> ${pokemon[i].num}</p>
-      <p class="huevos"> ${pokemon[i].egg}</p>
-      </div>`;
-    almacenar += item;
-  }
-  return almacenar;
-};
-contenedorPoke.innerHTML = poke(pokedata);
-
-/* buscador */
-/* const buscarpoke = (pokedata) => {
-  let llamado = '';
-  for (let i = 0; i < pokedata.length; i++) {
-    if (namebuscador.value === pokedata[i].nombre && i < pokedata.length) {
-      llamado = `
-      <div class="contentpoke">
-      <img class="imagenespoke" src="${pokedata[i].img}"/>
-      <p class ="id">  ${pokedata[i].id}</p>
-      <p class ="name"> ${pokedata[i].name}</p>
-      <p class="numero"> ${pokedata[i].num}</p>
-      <p class="huevos"> ${pokedata[i].egg}</p>
-      </div>`;
-      break;
-    }
-  }
-  return llamado;
-};
-
-buscador.addEventListener('click', () => {
-  contenedorPoke.innerHTML = buscarpoke(pokedata);
-});*/
-/* filtrado por tipos */
-const tipospoke = (data, tipos) => {
-  let listatipos = [];
-  for (let i = 0; i < data.length; i++) {
-    for (let x = 0; x < data[i].type.length; x++) {
-      if (data[i].type[x] === tipos) {
-        listatipos.push(data[i]);
-      }
-    }
-  }
-  return listatipos;
-};
-
-
-
-tipos.addEventListener('change', () => {
-  const tipos = document.getElementById('tipos').value;
-  let array = [];
-  array = tipospoke(pokedata, tipos);
-  contenedorPoke.innerHTML = poke(array);
-
-});
-
-
-/*ordenar de MENOR A MAYOR*/
-
-/*filtrar por acendente a descendente */
-
-const descendente = (data, ordenar1) => {
-
-  const ordenarMayorMenor = data.sort((a, b) => {
-    if (a.spawn_chance > b.spawn_chance) {
-      return 1;
-    }
-    if (a.spawn_chance < b.spawn_chance) {
-      return -1;
-    }
-    return 0;
-  });
-  if (ordenar1 === '1') {
-    return ordenarMayorMenor;
-  }
-  if (ordenar1 === '2') {
-    return ordenarMayorMenor.reverse();
-  }
-  return 0;
-};
-tipo.addEventListener('change', () => {
-  const ordenar1 = document.getElementById('tipo').value;
-  let arrai = [];
-  arrai = descendente(pokedata, ordenar1);
-  contenedorPoke.innerHTML = poke(arrai);
-
-});
-
-
-/* ordenar de la A-Z */
-const filterpoke = () => {
-  const namepoke = [];
-  const arrAZ = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  for (let i = 0; i < arrAZ.length; i++) {
-    for (let x = 0; x < pokedata.length; x++) {
-      if (arrAZ[i] === pokedata[x].name[0]) {
-        namepoke.push(pokedata[x]);
-      }
-    }
-  }
-  return namepoke;
-};
-ordenAZ.addEventListener('change', () => {
-  if ('A-Z' === ordenAZ.value) {
-    const ordenar = filterpoke();
-    contenedorPoke.innerHTML = poke(ordenar);
-  }
-});
-/* ordenar de Z-A */
-const ordenarpokemones1 = () => {
-  const nombrepokemones1 = [];
-  const arrayordenAZ1 = ['Z', 'Y', 'X', 'W', 'V', 'U', 'T', 'S', 'R', 'Q', 'P', 'O', 'N', 'M', 'L', 'K', 'J', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A'];
-  for (let i = 0; i < arrayordenAZ1.length; i++) {
-    for (let j = 0; j < pokedata.length; j++) {
-      if (arrayordenAZ1[i] === pokedata[j].name[0]) {
-        nombrepokemones1.push(pokedata[j]);
-      }
-    }
-  }
-  return nombrepokemones1;
-};
-ordenAZ.addEventListener('change', () => {
-  if ('Z-A' === ordenAZ.value) {
-    const ordenar1 = ordenarpokemones1();
-    contenedorPoke.innerHTML = poke(ordenar1);
-  }
-});
-
-
-const eclosionar = (data,huevo) => {
-  let evolucionar = [];
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].egg === huevo) {
-      evolucionar.push([i]);
-    }
-  }
-  return evolucionar;
-
-};
-huevosfilter('10 km');
-
-
-
-
-eclosionar.addEventListener('change', () => {
-  const huevo1 = document.getElementById('eclosionar').value;
-  let newarray = [];
-  newarray = eclosionar(pokedata,huevo);
-  contenedorPoke.innerHTM = poke(newarray);
-
-botoneclosionar.addEventListener('change', (event) => {
-  const eclosionar = event.target.value;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-});
-
-//((evolucionar.length * 100) / pokedata.length + '%');
+// document.getElementById('close').addEventListener('click', () => {
+//   document.getElementById('my-modal').classList.add('ocultar');
+//  });
 

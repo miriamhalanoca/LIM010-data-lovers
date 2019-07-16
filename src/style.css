@@ -108,6 +108,7 @@ img{
     display: none;
 }
 .pokemon {
+    margin: 70px 175px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -126,7 +127,8 @@ img{
     border: 1px dotted;
 }
 .diseño{
-    display: inline-block;
+    margin: 20px;
+    /* display: inline-block; */
     display: flex;
     justify-content: flex-end;
  }
@@ -135,10 +137,10 @@ img{
     padding: 15px 15px;
     font-weight: 600;
     font-size: 21px;
-    color: #ffffff;
+    color: #464444;
     background-color:rgb(156, 245, 236);
     border-radius: 6px;
-    border: 2px solid #7884e0;
+    border: 2px solid #0519af;
     display: flex;
 justify-content: flex-start;
   }
@@ -199,33 +201,46 @@ justify-content: flex-start;
     border-radius: 5px;
     align-content: center;
     justify-content:space-around; */
- }
+ 
  .imagenespoke{
     height: 165px;
     width: 185px;
    
  }
  .name {
-    color: white;
+    color: #2B4D86;
+    font-size: 21px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    /* color: white;
     text-transform: uppercase;
-    text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F,
-0 0 0.2em #87F;
+    text-shadow: 0 0 0.2em rgb(16, 4, 92), 0 0 0.2em rgb(16, 5, 90),
+0 0 0.2em rgb(16, 4, 92); */
  }
  .id{
-    color: white;
+    color: #2B4D86;
+    font-size: 21px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    /* color: white;
     text-transform: uppercase;
-    text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F,
-0 0 0.2em #87F;
+    text-shadow: 0 0 0.2em rgb(16, 4, 92), 0 0 0.2em rgb(16, 5, 90),
+    0 0 0.2em rgb(16, 4, 92);
+0 0 0.2em #87F; */
   
  }
  .numero {
-    color: white;
+    color: #2B4D86;
+    font-size: 21px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    /* color: white;
     text-transform: uppercase;
-    text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F,
-0 0 0.2em #87F;
+    text-shadow: 0 0 0.2em rgb(16, 4, 92), 0 0 0.2em rgb(16, 5, 90),
+0 0 0.2em rgb(16, 4, 92); */
  
  }
- header nav {
+ /* header nav {
     float: right;
     line-height: 55px;
     padding: 15px 30px 0px 0px;
@@ -250,7 +265,7 @@ header nav a  {
     min-height: 8vh;
     background-color: rgb(123, 202, 248);
     font-family: 'Poppins', sans-serif;
-}
+} */
 .logo{
     color:rgb(226,226,226);
     text-transform: uppercase;
@@ -258,11 +273,11 @@ header nav a  {
     font-weight: bold;
     font-size: 14px;
 }
-.burger div{
+/* .burger div{
     width: 25px;
     height: 5px;
     color: rgb(226,226,226);
-    margin: 5px;
+    margin: 5px; */
 /*}
 @media screen and (max-width:1024px){
     .nav-links{
@@ -288,7 +303,7 @@ header nav a  {
         transform: translateX(100%); 
     }
     /* The Modal (background) */
-.modal {
+/* .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -302,16 +317,16 @@ header nav a  {
   }
   
   /* Modal Content/Box */
-  .modal-content {
+  /* .modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
-  }
+  } */
   
   /* The Close Button */
-  .close {
+  /* .close {
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -324,8 +339,8 @@ header nav a  {
     text-decoration: none;
     cursor: pointer;
   }
-}
-  @media screen and (max-width: 460px)
+} */
+  /* @media screen and (max-width: 460px)
 {
 header nav {
     position: absolute;
@@ -336,9 +351,9 @@ header nav {
     background: rgba(51,51,51,0.9);
     transition: all 0.5s;
     transform: translateX(-100%);
-}
+} */
 
-    header nav a {
+    /* header nav a {
         display: block;
         color: #fff;
         height: 50px;
@@ -351,19 +366,31 @@ header nav {
     header nav a:hover {
             background:rgba(255,255,255,0.3);
             border-radius: 0px;
-    }
-}
+    } */
+/* } */ */
     
-#menu-bar:checked ~ .menu {
+/* #menu-bar:checked ~ .menu {
     transform: translateX(0%);
-} 
+}  */
 
 #imagenLogo {
     max-width: 150%;
     max-height: 60px;
     float: left;
     padding: 5px 2px 5px 2px;
-}/
+}
+.menu{
+    
+    transform: translateX(0%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(102, 27, 255, 0.58);
+    min-height: 120px;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+}
 
 
 
