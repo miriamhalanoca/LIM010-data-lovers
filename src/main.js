@@ -1,11 +1,11 @@
 
 /* Manejo del DOM */
-const pagina1 = document.getElementById('pantalla1');
-const pagina2 = document.getElementById('pantalla2');
-const boton1 = document.getElementById('btn');
-const botonAtras = document.getElementById('atras');
+const paginaUno = document.getElementById('pantallaUno');
+const paginaDos = document.getElementById('pantallaDos');
+const botonUno = document.getElementById('btn');
+const botonInicio = document.getElementById('atras');
 const encontrarPoke = document.getElementById('buscador');
-const ordenAZ = document.getElementById('ordenar');
+const ordenAbc = document.getElementById('ordenar');
 const tipos = document.getElementById('tipos');
 const direccionOrdenado = document.getElementById('direccion-ordenado');
 const seleccionarHuevo = document.getElementById('eclosionar');
@@ -14,13 +14,13 @@ let contador = 0;
 
 
 /* login */
-boton1.addEventListener('click', (event) => {
+botonUno.addEventListener('click', (event) => {
   event.preventDefault();
   const contraseña = document.getElementById('pass').value;
-  const nombre1 = document.getElementById('nombre').value;
-  if (nombre1 === '' && contraseña === '') {
-    pagina1.classList.add('hide');
-    pagina2.classList.remove('hide');
+  const usuario = document.getElementById('nombre').value;
+  if (usuario === '' && contraseña === '') {
+    paginaUno.classList.add('hide');
+    paginaDos.classList.remove('hide');
   } else {
     contador = contador + 1;
     document.getElementById('error').innerHTML = 'la contraseña incorect';
@@ -31,9 +31,9 @@ boton1.addEventListener('click', (event) => {
 });
 
 /* boton de regreso a inicio */
-botonAtras.addEventListener('click', () => {
-  pagina2.classList.add('hide');
-  pagina1.classList.remove('hide');
+botonInicio.addEventListener('click', () => {
+  paginaDos.classList.add('hide');
+  paginaUno.classList.remove('hide');
 });
 
 /* main */
@@ -64,22 +64,22 @@ tipos.addEventListener('change', (event) => {
 
 /* filtrar por acendente a descendente */
 direccionOrdenado.addEventListener('change', () => {
-  const ordenar1 = direccionOrdenado.value;
-  console.log(ordenar1);
+  const ordenarUno = direccionOrdenado.value;
+  console.log(ordenarUno);
   let array = [];
-  array = descendente(pokedata, ordenar1);
+  array = descendente(pokedata, ordenarUno);
   contenedorPoke.innerHTML = poke(array);
 });
 
 /* ordenar de la A-Z */
-ordenAZ.addEventListener('change', () => {
+ordenAbc.addEventListener('change', () => {
   if ('A-Z' === ordenAZ.value) {
     const ordenar = filterpoke();
     contenedorPoke.innerHTML = poke(ordenar);
   }
 });
 /* ordenar de Z-A */
-ordenAZ.addEventListener('change', () => {
+ordenAbc.addEventListener('change', () => {
   if ('Z-A' === ordenAZ.value) {
     const ordenar1 = ordenarpokemones1();
     contenedorPoke.innerHTML = poke(ordenar1);
@@ -102,26 +102,4 @@ encontrarPoke.addEventListener('input', (event) => {
   contenedorPoke.innerHTML = poke(pokebuscado);
 });
 
-/* Modal */
-// const pantalla2 = document.getElementById('contenedorPoke');
-// /* al contenedor le agrego un evento clik */
-// pantalla2.addEventListener('click', () => {
-//   const pokecito = event.target.parentElement.id - 1;
-//   console.log(pokecito);
-//   /* Pongo condicional que si el atributo name  del padre de ese elemento es pokemon, muestra modal e inserta datos del pokemon */
-//   if (event.target.parentElement.getAttribute('name') === 'pokemon') {
-//     /* Muestra modal */
-//     document.getElementById('my-modal').classList.remove('ocultar');
-//     /* Insertar info de pokemon en Modal */
-//     document.getElementById('caracteristicas').innerHTML = `
-// <img class="imagenModal" src="${pokedata[pokecito].img}"/>
-// <p> Nombre:${pokedata[pokecito].name}</p>
-// <p>Peso: ${pokedata[pokecito].weight}</p>
-// <p>Altura: ${pokedata[pokecito].height}</p>
-// <p>Tipo: ${pokedata[pokecito].type}</p> `;
-//   }
-// });
-// document.getElementById('close').addEventListener('click', () => {
-//   document.getElementById('my-modal').classList.add('ocultar');
-//  });
 

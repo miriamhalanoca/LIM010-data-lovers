@@ -8,19 +8,27 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu" href="style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800,800i" href="style.css" /> -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header>
-
+    <section class="menu">
+      <form>
+        <!-- Input del buscador -->
+        <input id="buscador" placeholder="Encuentra a tu pokemon!" type="text">
+        <button><span class="glyphicon glyphicon-search"></span></button>
+      </form>
+      <!-- Boton de inicio -->
+      <button id="atras" class="botonInicio" pe="submit">
+        <span class="glyphicon glyphicon-home"></span>
+      </button>
+    </section>
   </header>
 
   <main class="page-main">
     <!-- login -->
-    <section class="content-login" id="pantalla1">
+    <section class="content-login" id="pantallaUno">
       <form class="login" id="loginpg">
         <img src="img/pokemon.png" />
         <div class="form-item">
@@ -32,20 +40,13 @@
         </div>
         <a>¿olvidastes tu contraseña?</a>
         <button id="btn" type="button">iniciar sesion</button>
-        <a>¿No tienes una cuenta? Registrate</a>
+        <p>¿No tienes una cuenta? Registrate</p>
       </form>
     </section>
 
     <!-- Segunda pantalla -->
-    <section id="pantalla2" class="deseño1">
-      <div class="menu">
-
-        <!-- Input del buscador -->
-        <input id="buscador" placeholder="Encuentra a tu pokemon!" type="text">
-        <!-- Boton de inicio -->
-        <button id="atras" class="botonInicio" pe="submit">INICIO</button>
-
-
+    <section id="pantallaDos" class="stylePantalla hide">
+      <div class="section-menu">
         <section class="diseño">
           <select id="ordenar">
             <option>POR ORDEN </option>
@@ -87,11 +88,8 @@
         </section>
       </div>
       <div id="porcentaje"></div>
+      <div id="contenedorPoke" class="pokemon"></div>
     </section>
-
-
-    <div id="contenedorPoke" class="pokemon"></div>
-
   </main>
 
   <footer>
@@ -103,113 +101,3 @@
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
-
-<!--</html>
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Lovers</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <header>
-    <nav class="menu">
-      <a href="#" class="icon-home">INICIO </a>
-      <a href="#" class="icon-search">POKEMONES </a>
-      <a href="#" class="icon-filter"> FILTRAR </a>
-      <a href="#" class="icon-"> EGGS </a>
-    </nav>
-  </header>
-
-  <main class="page-main">
-    <!-- login -->
-<!--<section class="content-login" id="pantalla1">
-      <!-- The Modal -->
-<!-- <div id="my-modal" class="modal ocultar">
-        <!-- Modal content -->
-<!--<div class="modal-content">
-          <span id="close" class="close">&times;</span>
-          <div id="caracteristicas" class="caracteristicas"></div>
-        </div>
-      </div>
-      </div>
-      <form class="login" id="loginpg">
-        <img src="img/pokemon.png" />
-        <div class="form-item">
-          <label>correo electronico</label>
-          <input id="nombre" type="text">
-          <label>contraseña</label>
-          <input id="pass" type="password">
-          <section id="error" class="errorDeContraseña"></section>
-        </div>
-        <a>¿olvidastes tu contraseña?</a>
-        <button id="btn" type="button">iniciar sesion</button>
-        <p>¿No tienes una cuenta? Registrate</p>
-      </form>
-    </section>
-    <!-- pantalla 2 -->
-<!--<section id="pantalla2" class="deseño1">
-      <section class="diseño">
-        <select id="ordenar">
-          <option>POR ORDEN </option>
-          <option>A-Z</option>
-          <option>Z-A</option>
-        </select>
-        <select id="tipo">
-          <option>POR ORDEN </option>
-          <option value="1">MAYOR-MENOR</option>
-          <option value="2">MENOR-MAYOR</option>
-        </select>
-        <select id="tipos">
-          <option>FILTRAR POR</option>
-          <option value="Water">Agua</option>
-          <option value="Bug">Bicho</option>
-          <option value="Dragon">Dragon</option>
-          <option value="Electric">Electrico</option>
-          <option value="Ghost">Fantasma</option>
-          <option value="Fire">Fuego</option>
-          <option value="Ice">Hielo</option>
-          <option value="Fight">Lucha</option>
-          <option value="Normal">Normal</option>
-          <option value="Grass">Hierba</option>
-          <option value="Psychic">Psiquico</option>
-          <option value="Rock">Roca</option>
-          <option value="Land">Tierra</option>
-          <option value="Poison">Veneno</option>
-          <option value="Flying">Volador</option>
-        </select>
-        <select id="eclosionar">
-          <option> HUEVOS A ECLOSIONAR</option>
-          <option value="2 km">2 km</option>
-          <option value="5 Km">5 km</option>
-          <option value="10 Km">10 km</option>
-        </select>
-      </section>
-      <div id="contenedorPoke" class="pokemon"> </div>
-      <button id="atras" class="botonInicio" pe="submit">INICIO</button>
-    </section>
-    <div id="contenedorPoke" class="pokemon"> </div>
-    <button id="atras" class="botonInicio" pe="submit">INICIO</button>
-  </main>
-  <footer>
-    <div class="txt-footer">
-      <p> Created by Aleita & Mairim </p>
-      <div class="iconSocial">
-        <a href="https://www.facebook.com/PokemonGO/" class="icon-facebook2"></a>
-        <a href="https://www.instagram.com/pokemongoapp/?hl=es-la" class="icon-instagram"></a>
-        <a href="https://twitter.com/pokemongoapp" class="icon-twitter"></a>
-      </div>
-    </div>
-  </footer>
-  <!-- <script src="./data/lol/lol.js"></script> -->
-<!--<script src="./data/pokemon/pokemon.js"></script>-->
-<!-- <script src="./data/worldbank/worldbank.js"></script> -->
-<!--<script src="data.js"></script>-->
-<!-- <script src="main.js"></script>-->
-<!--</body>
-
-</html>-->
