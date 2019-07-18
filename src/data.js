@@ -3,7 +3,8 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 // data.js
-const obteniendodatapoke = (mostradata) => {
+/*const 
+                                    = (mostradata) => {
   arraydatapokemon = [];
   for (let i = 0; i < mostradata.length; i++); {
     arraydatapokemon.push({
@@ -25,7 +26,7 @@ const obteniendodatapoke = (mostradata) => {
   }
   return arraydatapokemon;
 };
-
+*/
 /* filtrar todos los pokemones por tipos */
 const tipospoke = (data, tipo) => {
   let listatipos = [];

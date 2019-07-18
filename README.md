@@ -27,11 +27,14 @@ Es un producto dirigido a usuarios que quieren entrar al mundo de los pokemones 
 las necesidades que ellos tienen es saber mas sobre que pokemones quieren  capturar y cual es el rango de poder que tienen cada uno y cual usarian en una batalla 
 
 
+
 ## investigacio-ux
 
 
 ## objetivos
-el objetivo es mostrar las caracteristicas de cada pokemon para que   
+el objetivo es mostrar las caracteristicas de cada pokemon para donde al  usuario se le muestra, un orden en el cual le pueda ayudar a buscar  en modo de la A-Z y de la Z-A y orden de poderes para que puedan tambien buscar de poderes 
+
+
 
 ## solucion
 

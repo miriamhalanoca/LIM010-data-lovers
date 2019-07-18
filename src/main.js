@@ -113,5 +113,3 @@ encontrarPoke.addEventListener('input', (event) => {
   const pokebuscado = buscador(pokedata, pokeBusca);
   contenedorPoke.innerHTML = poke(pokebuscado);
 });
-
-
