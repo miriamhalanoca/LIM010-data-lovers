@@ -110,7 +110,6 @@ img{
 }
 .diseño{
     margin: 20px;
-    
     display: flex;
     justify-content: flex-end;
  }
@@ -125,6 +124,19 @@ img{
     border: 2px solid #0519af;
     display: flex;
     justify-content: flex-start;
+}
+#x{
+    text-decoration: none;
+    padding: 15px 15px;
+    font-weight: 600;
+    font-size: 21px;
+    color: #464444;
+    background-color:rgb(156, 245, 236);
+    border-radius: 6px;
+    border: 2px solid #0519af;
+    display: flex;
+    justify-content: flex-start;
+   
 }
 .botonInicio {
     text-decoration: none;
@@ -150,8 +162,11 @@ img{
     margin: 10px;
     padding: 0px;
 }
-.pokemon {
+p{
     margin: 0px;
+}
+.pokemon {
+    
     text-align: center;
 }
 .imagenespoke{
@@ -187,7 +202,6 @@ img{
 #imagenLogo {
     max-width: 150%;
     max-height: 60px;
-    float: left;
     padding: 5px 2px 5px 2px;
 }
 .menu{ 
@@ -195,7 +209,14 @@ img{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(102, 27, 255, 0.58);
+    /* background-color: rgba(102, 27, 255, 0.58); */
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#febbbb+0,fe9090+45,ff5c5c+100;Red+3D+%231 */
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2c539e+0,2c539e+100;Blue+3D+%232 */
+    background: #2c539e; /* Old browsers */
+    background: -moz-linear-gradient(top,  #2c539e 0%, #2c539e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #2c539e 0%,#2c539e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #2c539e 0%,#2c539e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c539e', endColorstr='#2c539e',GradientType=0 ); /* IE6-9 */
     min-height: 120px;
     flex-wrap: wrap;
     padding: 20px;
@@ -207,8 +228,22 @@ img{
     padding: 20px;
     width: 100%;
 }
+.text-porcentaje{
+    color: #2B4D86;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
 .hide{
     display: none;
+}
+@media screen and (min-width: 750px){
+    .body{
+            background-size:100% 100%;
+            background-attachment: fixed;
+            overflow: hidden;
+            justify-content: center;
+        }
 }
 @media screen and (min-width: 750px){
     .body{

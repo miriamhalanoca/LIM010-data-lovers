@@ -13,17 +13,19 @@
 
 <body>
   <header>
-    <section class="menu">
-      <form>
+
+    <section id="menu-buscador " class="menu">
+      <form  id="botones" class="botones hide">
         <!-- Input del buscador -->
-        <input id="buscador" placeholder="Encuentra a tu pokemon!" type="text">
-        <button><span class="glyphicon glyphicon-search"></span></button>
+        <input id="buscador"  placeholder="Encuentra a tu pokemon!" type="text">
+        <button><span id="x" class="glyphicon glyphicon-search"></span></button>
       </form>
       <!-- Boton de inicio -->
-      <button id="atras" class="botonInicio" pe="submit">
-        <span class="glyphicon glyphicon-home"></span>
+      <button id="atras" class="botonInicio hide" pe="submit">
+        <span id="glyphicon" class="glyphicon glyphicon-home"></span>
       </button>
     </section>
+
   </header>
 
   <main class="page-main">
@@ -54,13 +56,13 @@
             <option>Z-A</option>
           </select>
 
-          <select id="direccion-ordenado">
+          <select id="direccion-ordenado" class="">
             <option>DIRECCION</option>
             <option value="1">MAYOR-MENOR</option>
             <option value="2">MENOR-MAYOR</option>
           </select>
 
-          <select id="tipos">
+          <select id="tipos" class="">
             <option>FILTRAR</option>
             <option value="Water">Agua</option>
             <option value="Bug">Bicho</option>
@@ -69,25 +71,45 @@
             <option value="Ghost">Fantasma</option>
             <option value="Fire">Fuego</option>
             <option value="Ice">Hielo</option>
-            <option value="Fight">Lucha</option>
+            <option value="Fighting">Lucha</option>
             <option value="Normal">Normal</option>
             <option value="Grass">Hierba</option>
             <option value="Psychic">Psiquico</option>
             <option value="Rock">Roca</option>
-            <option value="Land">Tierra</option>
+            <option value="Ground">Suelo</option>
             <option value="Poison">Veneno</option>
             <option value="Flying">Volador</option>
           </select>
+
+          <select id="poke-debilidades" class="">
+              <option>DEBILIDADES</option>
+              <option value="Water">Agua</option>
+              <option value="Bug">Bicho</option>
+              <option value="Dragon">Dragon</option>
+              <option value="Electric">Electrico</option>
+              <option value="Ghost">Fantasma</option>
+              <option value="Fire">Fuego</option>
+              <option value="Ice">Hielo</option>
+              <option value="Fight">Lucha</option>
+              <option value="Normal">Normal</option>
+              <option value="Grass">Hierba</option>
+              <option value="Psychic">Psiquico</option>
+              <option value="Rock">Roca</option>
+              <option value="Land">Tierra</option>
+              <option value="Poison">Veneno</option>
+              <option value="Flying">Volador</option>
+            </select>
 
           <select id="eclosionar">
             <option>ECLOSIONAR</option>
             <option value="2 km">2 km</option>
             <option value="5 km">5 km</option>
             <option value="10 km">10 km</option>
+            <option value="Not in Eggs">Not in Eggs</option>
           </select>
         </section>
       </div>
-      <div id="porcentaje"></div>
+      <div class="text-porcentaje hide" id="porcentaje"></div>
       <div id="contenedorPoke" class="pokemon"></div>
     </section>
   </main>
