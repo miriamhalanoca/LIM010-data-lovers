@@ -2,9 +2,9 @@
 
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
-
 // data.js
-const obteniendodatapoke = (mostradata) => {
+/*const 
+                                    = (mostradata) => {
   arraydatapokemon = [];
   for (let i = 0; i < mostradata.length; i++); {
     arraydatapokemon.push({
@@ -26,9 +26,8 @@ const obteniendodatapoke = (mostradata) => {
   }
   return arraydatapokemon;
 };
-
-/* filtrado por poderes de pokemones */
-
+*/
+/* filtrar todos los pokemones por tipos */
 const tipospoke = (data, tipo) => {
   let listatipos = [];
   for (let i = 0; i < data.length; i++) {
@@ -42,10 +41,7 @@ const tipospoke = (data, tipo) => {
   return listatipos;
 };
 
-
-
-
-/*filtrar por acendente a descendente */
+/* filtrar por acendente a descendente */
 const descendente = (data, ordenar1) => {
   const ordenarMayorMenor = data.sort((a, b) => {
     if (a.spawn_chance > b.spawn_chance) {
@@ -55,7 +51,6 @@ const descendente = (data, ordenar1) => {
       return -1;
     }
     return 0;
-
   });
   if (ordenar1 === '1') {
     return ordenarMayorMenor;
@@ -65,8 +60,6 @@ const descendente = (data, ordenar1) => {
   }
   return 0;
 };
-
-
 
 /* ordenar de la A-Z */
 const filterpoke = () => {
@@ -97,12 +90,18 @@ const ordenarpokemones1 = () => {
 };
 
 /*  eclosionar huevos */
-const huevosfilter = (data,stringKm) => {
-const filtrarhuevos = data.filter(filterEggs => filterEggs.egg === stringKm);
-return filtrarhuevos;
- };
+const huevosfilter = (data, stringKm) => {
+  const filtrarhuevos = data.filter(filterEggs => filterEggs.egg === stringKm);
+  return filtrarhuevos;
+};
+/* buscar pokemones */
+const buscador = (data, buscarpoke)=>{
+  return data.filter(buscarpokemones => buscarpokemones.name.toLowerCase().startsWith(buscarpoke));
+};
 
 window.POKEMON = POKEMON.pokemon;
-
-
-
+window.tipospoke = tipospoke;
+window.descendente = descendente;
+window.filterpoke = filterpoke;
+window.ordenarpokemones1 = ordenarpokemones1;
+window.huevosfilter = huevosfilter;
