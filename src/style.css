@@ -10,10 +10,6 @@ body{
     font-family: sans-serif; 
     background-attachment: fixed;
 }
-p {
-   
-    margin: 0px;
-}
 .page-main{
     height: 100%;
     width: 100%;
@@ -48,42 +44,34 @@ p {
     display:flex;
     flex-direction: column;
     align-items:flex-start;
- }
- .login .img-pokemon {
+}
+.login .img-pokemon {
     height: 255px;
     width: 318px;
     align-self: center;
- }
- .login label{
+}
+.login label{
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 25px;
     border-radius: 2px;
- }
- .login button{
+}
+.login button{
     width: 335px;
     height: 50px;
     background: #3897F0;
-    border-radius: 5px;
+    border-radius: 17px;
     line-height: 25px;
     font-family: Open Sans;
     font-weight: 800;
     font-size: 15px;
     color: #FFFFFF;
  }
-input{
+.login input{
     width: 335px;
     height: 45px;
-}
-img{   
-        height: 155px;
-    width: 179px;
-    
-}
-.noidentificado{
-    align-self: flex-end; 
 }
 .login a{
     font-size: 15px;
@@ -91,18 +79,23 @@ img{
     text-align: end;
     margin: 15px 0px;
     font-weight: bold;
- }
- .login p{
+}
+.login p{
     font-size: 15px;
     width: 100%;
     text-align: center;
     font-weight: bold;
- }
-
-.pokemon {
-    text-align: center;
 }
-  .errorDeContraseña{
+img{   
+    height: 155px;
+    width: 179px;
+    
+}
+.noidentificado{
+    align-self: flex-end; 
+}
+
+.errorDeContraseña{
     font-family: Open;
     font-size: 15px;
     color: red;
@@ -113,30 +106,144 @@ img{
     width: 50%;
     border: 1px dotted;
 }
-
-
-
+.diseño{
+    margin: 20px;
+    display: flex;
+    justify-content: flex-end;
+ }
+.diseño select {
+    text-decoration: none;
+    padding: 15px 15px;
+    font-weight: 600;
+    font-size: 21px;
+    color: #464444;
+    background-color:rgb(156, 245, 236);
+    border-radius: 6px;
+    border: 2px solid #0519af;
+    display: flex;
+    justify-content: flex-start;
+}
+#x{
+    text-decoration: none;
+    padding: 15px 15px;
+    font-weight: 600;
+    font-size: 21px;
+    color: #464444;
+    background-color:rgb(156, 245, 236);
+    border-radius: 6px;
+    border: 2px solid #0519af;
+    display: flex;
+    justify-content: flex-start;
+   
+}
+.botonInicio {
+    text-decoration: none;
+    padding: 15px 15px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color:rgb(20, 224, 207);
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+    display: flex;
+    justify-content: flex-start;
+ }
+.contentpoke {
+    height: 300px;
+    width: 210px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.16);
+    color: #2B4D86;
+    font-size: 21px;
+    display: inline-block;
+    margin: 10px;
+    padding: 0px;
+}
+p{
+    margin: 0px;
+}
+.pokemon {
+    
+    text-align: center;
+}
+.imagenespoke{
+    height: 165px;
+    width: 185px;
+   
+}
+.name {
+    color: #2B4D86;
+    font-size: 21px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+.id{
+    color: #2B4D86;
+    font-size: 21px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+.numero {
+    color: #2B4D86;
+    font-size: 21px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+.logo{
+        color:rgb(226,226,226);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+#imagenLogo {
+    max-width: 150%;
+    max-height: 60px;
+    padding: 5px 2px 5px 2px;
+}
+.menu{ 
+    transform: translateX(0%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: rgba(102, 27, 255, 0.58); */
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#febbbb+0,fe9090+45,ff5c5c+100;Red+3D+%231 */
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#2c539e+0,2c539e+100;Blue+3D+%232 */
+    background: #2c539e; /* Old browsers */
+    background: -moz-linear-gradient(top,  #2c539e 0%, #2c539e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #2c539e 0%,#2c539e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #2c539e 0%,#2c539e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c539e', endColorstr='#2c539e',GradientType=0 ); /* IE6-9 */
+    min-height: 120px;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+}
+.section-menu{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    width: 100%;
+}
+.text-porcentaje{
+    color: #2B4D86;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
 .hide{
     display: none;
-
 }
-.cabeza{
-    background-color: rgba(102, 27, 255, 0.58);
-    
-}
-
-
-
-    @media screen and (min-width: 750px){
-        .body{
+@media screen and (min-width: 750px){
+    .body{
             background-size:100% 100%;
             background-attachment: fixed;
             overflow: hidden;
             justify-content: center;
         }
-     }
-
-     @media screen and (min-width: 767px){
+}
+  @media screen and (min-width: 767px){
 
         .diseño{
             margin: 20px;
