@@ -3,8 +3,7 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 // data.js
-/*const 
-                                    = (mostradata) => {
+/*const obteniendodatapoke = (mostradata) => {
   arraydatapokemon = [];
   for (let i = 0; i < mostradata.length; i++); {
     arraydatapokemon.push({
