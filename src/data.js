@@ -43,7 +43,6 @@ const tipospoke = (data, tipo) => {
 const pokeDebilidad = (data, debilidades) => {
   let listaDebilidad = [];
   for (let i = 0; i < data.length; i++) {
-    // eslint-disable-next-line id-length
     for (let y = 0; y < data[i].weaknesses.length; y++) {
       if (data[i].weaknesses[y] === debilidades) {
         listaDebilidad.push(data[i]);
@@ -74,6 +73,7 @@ const descendente = (data, direccion) => {
   return 0;
 };
 
+  
 /* ordenar alfabeticamente */
 const ordenAlfabeticamente = (data, abcdef) => {
   // eslint-disable-next-line id-length
@@ -81,7 +81,7 @@ const ordenAlfabeticamente = (data, abcdef) => {
     if (a.name > b.name) {
       return 1;
     }
-    if (a.spawn_chance < b.spawn_chance) {
+    if (a.name < b.name) {
       return -1;
     }
     return 0;
@@ -94,6 +94,25 @@ const ordenAlfabeticamente = (data, abcdef) => {
   }
   return 0;
 };
+ 
+
+ 
+ //array_ordenado = sort(mi_array);
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*  eclosionar huevos */
 const huevosfilter = (data, stringKm) => {

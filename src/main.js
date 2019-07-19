@@ -42,7 +42,7 @@ botonInicio.addEventListener('click', () => {
   document.getElementById('botones').classList.add('hide');
 });
 
-/* main */
+/* main template  */
 const poke = (pokemon) => {
   let almacenar = ' ';
   for (let i = 0; i < pokemon.length; i++) {
@@ -93,7 +93,7 @@ ordenAbc.addEventListener('change', () => {
   const ordenarabcd = ordenAbc.value;
   console.log(ordenarabcd);
   let arrayabc = [];
-  arrayabc = ordenAlfabeticamente(pokedata, ordenarabcd);
+  arrayabc = ordenaralfabeticamente(pokedata, ordenarabcd);
   contenedorPoke.innerHTML = poke(arrayabc);
 });
 
