@@ -12,6 +12,8 @@ const direccionOrdenado = document.getElementById('direccion-ordenado');
 const pokefragil = document.getElementById('poke-debilidades');
 const seleccionarHuevo = document.getElementById('eclosionar');
 const menu = document.getElementById('menu-buscador');
+const inicioaz = document.getElementById('Start');
+const mayormenor = document.getElementById('Order');
 const pokedata = POKEMON.pokemon;
 let contador = 0;
 
@@ -42,18 +44,68 @@ botonInicio.addEventListener('click', () => {
   document.getElementById('botones').classList.add('hide');
 });
 
+/* boton de orden alfabetico */
+inicioaz.addEventListener('click', () => {
+  ordenAbc.classList.remove('hide');
+  direccionOrdenado.classList.add('hide');
+  tipos.classList.add('hide');
+  pokefragil.classList.add('hide');
+  seleccionarHuevo.classList.add('hide');
+});
+
+/* boton por ascendente y decendente */
+mayormenor.addEventListener('click', () => {
+  direccionOrdenado.classList.remove('hide');
+  ordenAbc.classList.add('hide');
+  tipos.classList.add('hide');
+  pokefragil.classList.add('hide');
+  seleccionarHuevo.classList.add('hide');
+});
+
+/* boton de tipos de pokemones */
+document.getElementById('Filter').addEventListener('click', () => {
+  ordenAbc.classList.add('hide');
+  direccionOrdenado.classList.add('hide');
+  tipos.classList.remove('hide');
+  pokefragil.classList.add('hide');
+  seleccionarHuevo.classList.add('hide');
+});
+
+/* boton de devilidades */
+document.getElementById('icon-devilidades').addEventListener('click', () => {
+  ordenAbc.classList.add('hide');
+  direccionOrdenado.classList.add('hide');
+  tipos.classList.add('hide');
+  pokefragil.classList.remove('hide');
+  seleccionarHuevo.classList.add('hide');
+});
+
+/* boton de eclosionar */
+document.getElementById('calculando').addEventListener('click', () => {
+  ordenAbc.classList.add('hide');
+  direccionOrdenado.classList.add('hide');
+  tipos.classList.add('hide');
+  pokefragil.classList.add('hide');
+  seleccionarHuevo.classList.remove('hide');
+});
+
 /* main */
 const poke = (pokemon) => {
-  let almacenar = ' ';
+  let almacenar = '';
+  let tiposA = '';
   for (let i = 0; i < pokemon.length; i++) {
+    for (let x = 0; x < pokemon[i].type.length; x++) {
+      tiposA += `<span class="item-tipos ${pokemon[i].type[x]}-tipo"> ${pokemon[i].type[x]}</span>`;
+    };
     let item = `
-      <div class="contentpoke">
+      <div id="${pokemon[i].id}" name="pokemon" class="contentpoke">
       <img class="imagenespoke" src="${pokemon[i].img}"/>
-      <p class ="id">  ${pokemon[i].id}</p>
+      <p class ="numero">N° ${pokemon[i].num}</p>
       <p class ="name"> ${pokemon[i].name}</p>
-      <p class="huevo"> ${pokemon[i].egg}</p>
+      <p class="tipos"> ${tiposA}</p>
       </div>`;
     almacenar += item;
+    tiposA = '';
   }
   return almacenar;
 };
@@ -113,3 +165,35 @@ encontrarPoke.addEventListener('input', (event) => {
   const pokebuscado = buscador(pokedata, pokeBusca);
   contenedorPoke.innerHTML = poke(pokebuscado);
 });
+
+/* modal */
+const modalMask = document.getElementById('modal-mask');
+// const modalBox = document.getElementById('modal-box');
+const infoPokemon = document.getElementById('info-pokemon');
+const close = document.getElementById('close');
+
+const openModal = () => {
+  const eventIdPokemon = parseInt(event.target.parentElement.id);
+  const newArray = pokedata.map(obj => {
+    return obj.id;
+  }).indexOf(eventIdPokemon);
+  if (event.target.parentElement.getAttribute('name') === 'pokemon') {
+    modalMask.classList.remove('hide');
+    infoPokemon.innerHTML = `
+    <img class="img-modal" src="${pokedata[newArray].img}">
+    <p class="name-modal">${pokedata[newArray].weight}</p>
+    <p></p>
+    <p></p>
+    <p></p>
+    `;
+  }
+  // console.log(eventIdPokemon);
+};
+contenedorPoke.addEventListener('click', () => {
+  openModal();
+});
+close.addEventListener('click', () => {
+  modalMask.classList.add('hide');
+});
+
+

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -15,22 +15,31 @@
   <header>
 
     <section id="menu-buscador " class="menu">
-      <form  id="botones" class="botones hide">
+      <nav class="menu-nav">
+        <ul>
+          <!-- <il><a href="#" id="Startuno" class="icon-home">INICIO</a></il> -->
+          <il><a href="#"><span id="Start" class="icon-orden">ORDEN</a></il>
+          <il><a href="#"><span id="Order" class="icon-search">MAYOR-MENOR</a></il>
+          <il><a href="#"><span id="Filter" class="icon-filter">TIPOS</a></il>
+          <il><a href="#"><span id="icon-devilidades" class="icon-weaknesses">DEVILIDADES</a></il>
+          <il><a href="#"><span id="calculando" class="icon-eggs">ECLOSIONAR</a></il>
+        </ul>
+      </nav>
+      <form id="botones" class="botones hide">
         <!-- Input del buscador -->
-        <input id="buscador"  placeholder="Encuentra a tu pokemon!" type="text">
-        <button><span id="x" class="glyphicon glyphicon-search"></span></button>
+        <input id="buscador" placeholder="Encuentra a tu pokemon!" type="text">
       </form>
       <!-- Boton de inicio -->
       <button id="atras" class="botonInicio hide" pe="submit">
         <span id="glyphicon" class="glyphicon glyphicon-home"></span>
       </button>
     </section>
-
   </header>
 
   <main class="page-main">
     <!-- login -->
     <section class="content-login" id="pantallaUno">
+      <a><span class="lnr lnr-sun"></span></a>
       <form class="login" id="loginpg">
         <img src="img/pokemon.png" />
         <div class="form-item">
@@ -48,9 +57,11 @@
 
     <!-- Segunda pantalla -->
     <section id="pantallaDos" class="stylePantalla hide">
-      <div class="section-menu">
-        <section class="diseño">
-          <select id="ordenar">
+      <div id="section-menu" class="section-menu">
+
+        <section id="diseñopantallados" class="diseño">
+
+          <select id="ordenar" class="">
             <option>POR ORDEN </option>
             <option>A-Z</option>
             <option>Z-A</option>
@@ -82,25 +93,25 @@
           </select>
 
           <select id="poke-debilidades" class="">
-              <option>DEBILIDADES</option>
-              <option value="Water">Agua</option>
-              <option value="Bug">Bicho</option>
-              <option value="Dragon">Dragon</option>
-              <option value="Electric">Electrico</option>
-              <option value="Ghost">Fantasma</option>
-              <option value="Fire">Fuego</option>
-              <option value="Ice">Hielo</option>
-              <option value="Fight">Lucha</option>
-              <option value="Normal">Normal</option>
-              <option value="Grass">Hierba</option>
-              <option value="Psychic">Psiquico</option>
-              <option value="Rock">Roca</option>
-              <option value="Land">Tierra</option>
-              <option value="Poison">Veneno</option>
-              <option value="Flying">Volador</option>
-            </select>
+            <option>DEBILIDADES</option>
+            <option value="Water">Agua</option>
+            <option value="Bug">Bicho</option>
+            <option value="Dragon">Dragon</option>
+            <option value="Electric">Electrico</option>
+            <option value="Ghost">Fantasma</option>
+            <option value="Fire">Fuego</option>
+            <option value="Ice">Hielo</option>
+            <option value="Fight">Lucha</option>
+            <option value="Normal">Normal</option>
+            <option value="Grass">Hierba</option>
+            <option value="Psychic">Psiquico</option>
+            <option value="Rock">Roca</option>
+            <option value="Land">Tierra</option>
+            <option value="Poison">Veneno</option>
+            <option value="Flying">Volador</option>
+          </select>
 
-          <select id="eclosionar">
+          <select id="eclosionar" class="">
             <option>ECLOSIONAR</option>
             <option value="2 km">2 km</option>
             <option value="5 km">5 km</option>
@@ -109,13 +120,27 @@
           </select>
         </section>
       </div>
-      <div class="text-porcentaje hide" id="porcentaje"></div>
       <div id="contenedorPoke" class="pokemon"></div>
+      <div class="text-porcentaje hide" id="porcentaje"></div>
     </section>
+    <div id="modal-mask" class="modal-mask hide">
+      <div class="modal-box" id="modal-box">
+        <span id="close" class="close">&times;</span>
+
+        <div id="info-pokemon" class="info-pokemon"></div>
+      </div>
+    </div>
   </main>
 
   <footer>
-
+    <div class="txt-footer">
+      <p> Created by AlelizSanchez® & Miriam® </p>
+      <div class="iconSocial">
+        <a href="https://www.facebook.com/PokemonGO/" class="icon-facebook2"></a>
+        <a href="https://www.instagram.com/pokemongoapp/?hl=es-la" class="icon-instagram"></a>
+        <a href="https://twitter.com/pokemongoapp" class="icon-twitter"></a>
+      </div>
+    </div>
   </footer>
   <!-- <script src="./data/lol/lol.js"></script> -->
   <script src="./data/pokemon/pokemon.js"></script>
