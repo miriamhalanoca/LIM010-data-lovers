@@ -1,43 +1,75 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 *{
     margin:0; 
     padding:0;
-    }
+}
 body{
-    color: black;
-    background-image: url(img/bg.jpg);
-    background-repeat:no-repeat;
-    background-size: 100% 100%;
-    font-family: sans-serif; 
-    background-attachment: fixed;
-}
-.page-main{
-    height: 100%;
-    width: 100%;
-}
-.page-main .content-login{
-    width: 100%;
-    height: 100vh;
-    
-    justify-content: center;
-    align-items: center;
-}
-.login{
-    background-color: rgba(166, 224, 221, 0.548);
-   border-radius: 5px;
-   padding: 5px;
-   width: 500px;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   -webkit-box-shadow: 10px 10px 5px 5px rgba(94, 93, 93, 0.75);
-   -moz-box-shadow: 10px 10px 5px 5px rgba(94, 93, 93, 0.75);
-   box-shadow: 10px 10px 5px 5px rgba(94, 93, 93, 0.75);
+    min-height: 100vh;
     display: flex;
-    flex-flow: column wrap;
-    height: 600px;
-    width: 350px;
-    margin: 0 auto;
+    flex-direction: column;
+}
+main{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fondo{
+    background-image: url('../src/img/bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* header */
+header{
+    padding: 10px;
+}
+header nav{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    background:#024959;
+}
+.menu-bar{
+    font-size: 20px;
+}
+header li{
+    list-style: none;
+}
+header nav ul {
+    overflow:hidden;
+    list-style:none;
+}
+header nav ul li a{
+    color: #fff;
+    padding: 20px;
+    display: block;
+    text-decoration:none;
+}
+header nav ul li span{
+    margin-right: 10px;
+
+}
+header nav ul li a:hover{
+background:#037E8C;
+}
+.fa-search{
+    color: #464444;
+    background: #2bcda9;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.botones{
+    display: flex;
+    justify-content: space-around;
+}
+/* login */
+.login{
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 .login .form-item {
@@ -59,8 +91,8 @@ body{
     border-radius: 2px;
 }
 .login button{
-    width: 335px;
-    height: 50px;
+    width: 280px;
+    height: 45px;
     background: #3897F0;
     border-radius: 17px;
     line-height: 25px;
@@ -70,7 +102,7 @@ body{
     color: #FFFFFF;
  }
 .login input{
-    width: 335px;
+    width: 280px;
     height: 45px;
 }
 .login a{
@@ -86,122 +118,462 @@ body{
     text-align: center;
     font-weight: bold;
 }
-img{   
-    height: 155px;
+/* fin login */
+.log{
     width: 179px;
-    
 }
-.noidentificado{
-    align-self: flex-end; 
+img{ 
+    margin: 20px;  
+    width:auto;  
 }
-
-.errorDeContraseña{
-    font-family: Open;
-    font-size: 15px;
-    color: red;
-}
-.imagenpoke{
-    display: table-cell;
-    vertical-align: middle;
-    width: 50%;
-    border: 1px dotted;
-}
-
-#x{
-    text-decoration: none;
-    padding: 15px 15px;
-    font-weight: 600;
-    font-size: 21px;
-    color: #464444;
-    background-color:rgb(156, 245, 236);
-    border-radius: 6px;
-    border: 2px solid #0519af;
-    display: flex;
-    justify-content: flex-start;
-   
-}
-.botonInicio {
-    text-decoration: none;
-    padding: 15px 15px;
-    font-weight: 600;
-    font-size: 20px;
-    color: #ffffff;
-    background-color:rgb(20, 224, 207);
-    border-radius: 6px;
-    border: 2px solid #0016b0;
-    display: flex;
-    justify-content: flex-start;
- }
 .contentpoke {
     height: 300px;
-    width: 210px;
+    width: 240px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.16);
     color: #2B4D86;
     font-size: 21px;
     display: inline-block;
+    margin: 20px;
+    padding: 5px;
+    vertical-align: top;
+}
+#buscador{
+    font-size: 15px;
+    border-radius: 6px;
+    width: 200px;
+    height: 44px;
+}
+.pokemon { 
+    text-align: center;
+}
+.diseño select {
     margin: 10px;
-    padding: 0px;
+    text-decoration: none;
+    padding: 15px 15px;
+    font-weight: 600;
+    font-size: 21px;
+    color: #464444;
+    background:linear-gradient(to right, #24CCAA, #A2DB95);
+    border-radius: 6px;
+    border: 2px solid #0519af;
+    display: flex;
+    justify-content: flex-start;
 }
-p{
-    margin: 0px;
+.botonInicio {
+    border-style: none;
+    padding: 0px 10px;
+    height: 40px;
+    font-size: 20px;
+    color: #464444;
+    background-color: rgb(43, 205, 169);
+    border-radius: 6px;
+ } 
+ .numero {
+    color: #2B4D86;
+    font-size: 15px;
+    text-align: LEFT;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 30px;
 }
-.pokemon {
+.close {
+    font-size: 50px;
+    font-weight: bold;
+    color: #000;
+    filter: alpha(opacity=20);
+    opacity: .4;
+    display: flex;
+    align-self: flex-end;
+    margin-right: 15%;
+}
+
+
+.section-menu{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    width: 100%;
+}
+.text-porcentaje{
+    color: #2B4D86;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* style de pokemones */
+.item-tipos {
+    margin: 0 7px;
+}
+.Water-tipo{
+    padding: 3px 9px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 6px;
+    background-color:rgb(29, 133, 230);
+}
+.Bug-tipo{  
+    padding: 3px 9px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 6px; 
+    background: #b4ddb4; 
+    background: -moz-linear-gradient(top,  #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', endColorstr='#002400',GradientType=0 ); /* IE6-9 */
+}
+.Dragon-tipo{
+    padding: 3px 9px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 6px;
+    background-color:rgb(255, 115, 0);
+}
+.Electric-tipo{
+    padding: 3px 9px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 6px;
+    background-color:rgb(255, 251, 0);
+}
+.Ghost-tipo{
+    padding: 3px 9px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 6px;
+    background-color:rgb(168, 168, 168);
+}
+.Fire-tipo{
+    padding: 3px 9px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 6px;
+    background-color:red;
+}
+.Ice-tipo{
+    padding: 3px 9px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 6px;
+    background-color:rgb(21, 229, 248);
+}
+.Fighting-tipo{
+    padding: 3px 9px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 6px;
+    background-color:rgb(202, 69, 17);
+}
+.Normal-tipo{
+    padding: 3px 9px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 6px;
+    background-color:rgb(143, 138, 138);
+}
+.Grass-tipo{
+    padding: 3px 9px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 6px;
+    background: #d2ff52; /* Old browsers */
+    background: -moz-linear-gradient(top,  #d2ff52 0%, #91e842 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #d2ff52 0%,#91e842 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #d2ff52 0%,#91e842 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=0 ); /* IE6-9 */
+}
+.Psychic-tipo{
+    padding: 3px 9px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 6px;
+    background: #ff5db1; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ff5db1 0%, #ef017c 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #ff5db1 0%,#ef017c 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #ff5db1 0%,#ef017c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5db1', endColorstr='#ef017c',GradientType=0 ); /* IE6-9 */
+}
+.Rock-tipo{
+    padding: 3px 9px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 6px;
+    background-color:rgb(122, 111, 7);
+
+}
+.Ground-tipo{
+    padding: 3px 9px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 6px;
+    background: #f0b7a1; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f0b7a1 0%, #8c3310 50%, #752201 51%, #bf6e4e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #f0b7a1 0%,#8c3310 50%,#752201 51%,#bf6e4e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #f0b7a1 0%,#8c3310 50%,#752201 51%,#bf6e4e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0b7a1', endColorstr='#bf6e4e',GradientType=0 ); /* IE6-9 */
+
+}
+.Poison-tipo{
+    padding: 3px 9px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 6px;
+    background-color:rgb(163, 10, 177);
+}
+.Flying-tipo{
+    padding: 3px 9px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 6px;
+    background: #b3dced; /* Old browsers */
+    background: -moz-linear-gradient(top,  #b3dced 0%, #29b8e5 50%, #bce0ee 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #b3dced 0%,#29b8e5 50%,#bce0ee 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #b3dced 0%,#29b8e5 50%,#bce0ee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee',GradientType=0 ); /* IE6-9 */
+}
+/* fin style de pokemones */
+
+/* modal para pokemones */
+.modal-mask {
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    background: rgb(204, 135, 135, 0.5);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-box{
+    width: 40vh;
+    height: 60vh;
+    background: white;
+    box-shadow: 3px 12px 25px 0;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* fin modal para pokemones */
+
+footer{
+    background-color: #378B7D;
+    background: linear-gradient(to right, #639d25, #427768);
+    margin: 0; 
+    padding: 8px;
+    font-family: 'Handlee', cursive;
+    font-size: 100%;
+    text-align: center;
+    color: #fff;
+}
+.iconSocial{
+    text-align: center;
+    padding: 5px 3px 4px 3px;
+   }
+
+.hide{
+    display: none;
+}
+
+/* responsive para celular */
+@media screen and (min-width: 764px){
     
-    text-align: center;
-}
-.imagenespoke{
-    height: 165px;
-    width: 185px;
+    header nav{
+        width: 90%;
+        max-width: 1000px;
+        margin: 20px auto;
+        background:#024959;
+    }
+    .menu-bar{
+        display:none;
+    }
+    header li {
+        display: none;
+    }
+
+    header nav ul {
+        overflow:hidden;
+        list-style:none;
+    }
+    
+    header nav ul li a{
+        color: #fff;
+        padding: 20px;
+        display: block;
+        text-decoration:none;
+    }
+    header nav ul li span{
+        margin-right: 10px;
+    
+    }
+    header nav ul li a:hover{
+    background:#037E8C;
+    }
+    .fa-search {
+        font-size: 25px;
+        padding: 12px;
+    }
+    .botonInicio{
+        padding: 0px 13px;
+        height: 49px;
+        font-size: 25px;
+    }
+    /* login */
+    img{  
+        width: 179px;  
+    }
+    .contentpoke{
+        height: 350px;
+        width: 270px;
+    }
+    .login{
+        padding: 30px 50px;
+        background: rgba(53, 53, 47, 0.43);
+    }
+    .login .form-item {
+        display:flex;
+        flex-direction: column;
+        align-items:flex-start;
+    }
+    .login .img-pokemon {
+        height: 255px;
+        width: 318px;
+        align-self: center;
+    }
+    .login label{
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 25px;
+        border-radius: 2px;
+    }
+    .login button{
+        width: 335px;
+        height: 50px;
+        background: #3897F0;
+        border-radius: 17px;
+        line-height: 25px;
+        font-family: Open Sans;
+        font-weight: 800;
+        font-size: 15px;
+        color: #FFFFFF;
+     }
+    .login input{
+        width: 335px;
+        height: 45px;
+    }
+    .login a{
+        font-size: 15px;
+        width: 100%;
+        text-align: end;
+        margin: 15px 0px;
+        font-weight: bold;
+    }
+    .login p{
+        font-size: 15px;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+    }
+    /* fin login */
+    .noidentificado{
+        align-self: flex-end; 
+    }
+    
+    .errorDeContraseña{
+        font-family: Open;
+        font-size: 15px;
+        color: red;
+    }
+    .imagenpoke{
+    
+        display: table-cell;
+        vertical-align: middle;
+        width: 50%;
+        border: 1px dotted;
+    }
+    .diseño{
+        margin: 20px;
+        display: flex;
+        justify-content: flex-end;
+     }
+    .diseño select {
+        margin: 10px;
+        text-decoration: none;
+        padding: 15px 15px;
+        font-weight: 600;
+        font-size: 21px;
+        color: #464444;
+        background:linear-gradient(to right, #24CCAA, #A2DB95);
+        border-radius: 6px;
+        border: 2px solid #0519af;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    #buscador{
+        padding: 3px 9px;
+    font-weight: 600;
+    font-size: 25px;
+    border-radius: 6px;
+    height: 50px;
+    width: 368px;
+    }
+    p{
+        margin: 0px;
+    }
+  
+    .name {
+        color: #2B4D86;
+        font-size: 21px;
+        text-align: center;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    .id{
+        color: #2B4D86;
+        font-size: 21px;
+        text-align: center;
+        font-family: 'Ubuntu', sans-serif;
+    }
    
-}
-.name {
-    color: #2B4D86;
-    font-size: 21px;
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-}
-.id{
-    color: #2B4D86;
-    font-size: 21px;
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-}
-.numero {
-    color: #2B4D86;
-    font-size: 21px;
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-}
-.logo{
+    .logo{
         color:rgb(226,226,226);
         text-transform: uppercase;
         letter-spacing: 3px;
         font-weight: bold;
         font-size: 14px;
-    }
-#imagenLogo {
-    max-width: 150%;
-    max-height: 60px;
-    padding: 5px 2px 5px 2px;
-}
-
-.hide{
-    display: none;
-}
-@media screen and (min-width: 750px){
-    .body{
-            background-size:100% 100%;
-            background-attachment: fixed;
-            overflow: hidden;
-            justify-content: center;
         }
-}
-  @media screen and (min-width: 767px){
-
-    
-    
+    #imagenLogo {
+        max-width: 150%;
+        max-height: 60px;
+        padding: 5px 2px 5px 2px;
+    }
     
     .section-menu{
         display: flex;
@@ -215,74 +587,174 @@ p{
         text-align: center;
         font-family: 'Ubuntu', sans-serif;
     }
-
-        .diseño{
-            margin: 20px;
-            
-            display: flex;
-            justify-content: flex-end;
-         }
-         .diseño select:hover {
-            cursor: pointer;
-             background: rgb(45, 236, 125)
-        
-         }
-          .diseño select {
-           
-            text-decoration: none;
-            padding: 15px 15px;
-            font-weight: 600;
-            font-size: 21px;
-            color: #464444;
-            background-color:rgb(156, 245, 236);
-            border-radius: 6px;
-            border: 2px solid #0519af;
-            display: flex;
-        justify-content: flex-start;
-        background:rgba(0,0,0,0.03)
-          }
-          .botonInicio {
-            text-decoration: none;
-            padding: 15px 15px;
-            font-weight: 600;
-            font-size: 20px;
-            color: #ffffff;
-            background-color:rgb(20, 224, 207);
-            border-radius: 6px;
-            border: 2px solid #0016b0;
-            display: flex;
-        justify-content: flex-start;
-               
-         }
-        
-       
-         
-     }
-
-
-
-     @media screen and (min-width: 767px){
-        
-        .menu{ 
-            transform: translateX(0%);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background: #2c539e; 
-            background: -moz-linear-gradient(top,  #2c539e 0%, #2c539e 100%);
-            background: -webkit-linear-gradient(top,  #2c539e 0%,#2c539e 100%); 
-            background: linear-gradient(to bottom,  #2c539e 0%,#2c539e 100%); 
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c539e', endColorstr='#2c539e',GradientType=0 ); 
-            min-height: 120px;
-            flex-wrap: wrap;
-            padding: 0px;
-            width: 100%;
-        }
-        .botonBuscador{
-            left: -40px;
-            font-size: 30px;
-            cursor: pointer;
-            background: rgb(241, 243, 237)
-            
-        }
-     }
+    
+    /* style de pokemones */
+    .item-tipos {
+        margin: 0 7px;
+    }
+    .Water-tipo{
+        padding: 3px 9px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 6px;
+        background-color:rgb(29, 133, 230);
+    }
+    .Bug-tipo{  
+        padding: 3px 9px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 6px; 
+        background: #b4ddb4; 
+        background: -moz-linear-gradient(top,  #b4ddb4 0%, #83c783 17%, #52b152 33%, #008a00 67%, #005700 83%, #002400 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', endColorstr='#002400',GradientType=0 ); /* IE6-9 */
+    }
+    .Dragon-tipo{
+        padding: 3px 9px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 6px;
+        background-color:rgb(255, 115, 0);
+    }
+    .Electric-tipo{
+        padding: 3px 9px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 6px;
+        background-color:rgb(255, 251, 0);
+    }
+    .Ghost-tipo{
+        padding: 3px 9px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 6px;
+        background-color:rgb(168, 168, 168);
+    }
+    .Fire-tipo{
+        padding: 3px 9px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 6px;
+        background-color:red;
+    }
+    .Ice-tipo{
+        padding: 3px 9px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 6px;
+        background-color:rgb(21, 229, 248);
+    }
+    .Fighting-tipo{
+        padding: 3px 9px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 6px;
+        background-color:rgb(202, 69, 17);
+    }
+    .Normal-tipo{
+        padding: 3px 9px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 6px;
+        background-color:rgb(143, 138, 138);
+    }
+    .Grass-tipo{
+        padding: 3px 9px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 6px;
+        background: #d2ff52; /* Old browsers */
+        background: -moz-linear-gradient(top,  #d2ff52 0%, #91e842 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  #d2ff52 0%,#91e842 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  #d2ff52 0%,#91e842 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=0 ); /* IE6-9 */
+    }
+    .Psychic-tipo{
+        padding: 3px 9px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 6px;
+        background: #ff5db1; /* Old browsers */
+        background: -moz-linear-gradient(top,  #ff5db1 0%, #ef017c 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  #ff5db1 0%,#ef017c 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  #ff5db1 0%,#ef017c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5db1', endColorstr='#ef017c',GradientType=0 ); /* IE6-9 */
+    }
+    .Rock-tipo{
+        padding: 3px 9px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 6px;
+        background-color:rgb(122, 111, 7);
+    
+    }
+    .Ground-tipo{
+        padding: 3px 9px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 6px;
+        background: #f0b7a1; /* Old browsers */
+        background: -moz-linear-gradient(top,  #f0b7a1 0%, #8c3310 50%, #752201 51%, #bf6e4e 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  #f0b7a1 0%,#8c3310 50%,#752201 51%,#bf6e4e 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  #f0b7a1 0%,#8c3310 50%,#752201 51%,#bf6e4e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0b7a1', endColorstr='#bf6e4e',GradientType=0 ); /* IE6-9 */
+    
+    }
+    .Poison-tipo{
+        padding: 3px 9px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 6px;
+        background-color:rgb(163, 10, 177);
+    }
+    .Flying-tipo{
+        padding: 3px 9px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        border-radius: 6px;
+        background: #b3dced; /* Old browsers */
+        background: -moz-linear-gradient(top,  #b3dced 0%, #29b8e5 50%, #bce0ee 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  #b3dced 0%,#29b8e5 50%,#bce0ee 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  #b3dced 0%,#29b8e5 50%,#bce0ee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee',GradientType=0 ); /* IE6-9 */
+    }
+    /* fin style de pokemones */
+    
+    .modal-box{
+        width: 50vh;
+        height: 80vh;
+    }
+   
+    /* fin modal para pokemones */
+    
+    footer{
+        background-color: #378B7D;
+        background: linear-gradient(to right, #639d25, #427768);
+        margin: 0; 
+        padding: 8px;
+        font-family: 'Handlee', cursive;
+        font-size: 100%;
+        text-align: center;
+        color: #fff;
+    }
+    .iconSocial{
+        text-align: center;
+        padding: 5px 3px 4px 3px;
+       }     
+}

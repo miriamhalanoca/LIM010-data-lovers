@@ -44,9 +44,12 @@ el objetivo es mostrar las caracteristicas de cada pokemon para donde al  usuari
 ## papel
 ![Con titulo](img/1.jpeg) "titulo")
 ![Con titulo](img/2.jpeg) "titulo")
-![Con titulo](img/3.jpeg) "titulo")
+
 
 ## resumen-de-feedback
 
 
 ## prototipo-alta-fidelidad
+https://www.figma.com/file/rtN3XYW2Q3yvK5TH1TucKn/Untitled-Copy?node-id=38%3A1
+
+https://www.figma.com/file/rtN3XYW2Q3yvK5TH1TucKn/Untitled-Copy?node-id=16%3A18

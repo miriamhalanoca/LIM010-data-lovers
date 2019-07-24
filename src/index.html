@@ -3,42 +3,51 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
-
-<body>
-  <header>
-
-    <section id="menu-buscador " class="menu">
-      <form  id="botones" class="botones hide">
+<body id="body" class="fondo">
+  <header  id="header" class="hide">
+ <!-- <section id="menu-buscador" class="menu"> -->
+      <!-- <nav class="menu-nav"> -->
+          <li><a href="#" id="bt-menu" class="bt-menu"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
+          <nav id="menu-nav" class="menu-nav hide">
+        <ul>
+          <!-- <il><a href="#" id="Startuno" class="icon-home">INICIO</a></il> -->
+          <li> <a href="#"><span id="start" class="icon-orden">ORDEN</span> </a> </li>
+          <li> <a href="#"><span id="order" class="icon-search">MAYOR-MENOR</span> </a> </li>
+          <li> <a href="#"><span id="filter" class="icon-filter">TIPOS</span> </a> </li>
+          <li> <a href="#"><span id="icon-devilidades" class="icon-weaknesses">DEBILIDADES</span> </a> </li>
+          <li> <a href="#"><span id="calculando" class="icon-eggs">ECLOSIONAR</span> </a> </li>
+        </ul>
+      </nav>
+      <form id="botones" class="botones hide">
         <!-- Input del buscador -->
-        <input id="buscador"  placeholder="Encuentra a tu pokemon!" type="text" class="botonBuscador">
-        <button><span id="x" class="glyphicon glyphicon-search"></span></button>
+        <input id="buscador" placeholder="Encuentra a tu pokemon!" type="text"> <i class="fa fa-search"
+        aria-hidden="true"></i>
       </form>
+
       <!-- Boton de inicio -->
-      <button id="atras" class="botonInicio hide" pe="submit">
-        <span id="glyphicon" class="glyphicon glyphicon-home"></span>
-      </button>
-    </section>
-
+      <button type="button" id="atras" class="boton-inicio hide" pe="submit"> <span id="glyphicon"
+          class="glyphicon glyphicon-home"></span> </button>
+</section>
   </header>
-
   <main class="page-main">
+
     <!-- login -->
-    <section class="content-login" id="pantallaUno">
+    <section class="content-login" id="pantalla-uno">
+        <h1>`</h1>
+      <a><span class="lnr lnr-sun"></span></a>
       <form class="login" id="loginpg">
-        <img src="img/pokemon.png" />
+        <img alt="imagen" src="img/pokemon.png" />
         <div class="form-item">
           <label>usuario</label>
           <input id="nombre" type="text">
-          <label>contraseña</label>
+          <label> contraseña </label>
           <input id="pass" type="password">
-          <section id="error" class="errorDeContraseña"></section>
+          <section id="error" class="error-contrasena"> <h6>`</h6> </section>
         </div>
         <a>¿olvidastes tu contraseña?</a>
         <button id="btn" type="button">iniciar sesion</button>
@@ -47,27 +56,26 @@
     </section>
 
     <!-- Segunda pantalla -->
-    <section id="pantallaDos" class="stylePantalla hide">
-      <div class="section-menu">
-        <section class="diseño">
-          <select id="ordenar">
-            <option>POR ORDEN </option>
-            <option value="a-z">A-Z</option>
-            <option value="z-a">Z-A</option>
+    <section id="pantalla-dos" class="stylepantalla hide" >
+        <h2>`</h2>
+     <div id="section-menu" class="section-menu">
+        <section id="diseno-pantalla-dos" class="diseno">
+            <h4>`</h4>
+          <select id="ordenar" class="">
+            <option>ALFABETICAMENTE</option>
+            <option value="AZ">AZ</option>
+            <option value="ZA">ZA</option>
           </select>
-
-          <select id="direccion-ordenado" class="">
-            <option>DIRECCION</option>
-            <option value="1">MAYOR-MENOR</option>
-            <option value="2">MENOR-MAYOR</option>
+          <select id="aparicion" class="">
+            <option>APARICIÓN</option>
+            <option value="1">MENOR APARICIÓN</option>
+            <option value="2">MAYOR APARICIÓN</option>
           </select>
-
           <select id="tipos" class="">
-            <option>FILTRAR</option>
+            <option>TIPO</option>
             <option value="Water">Agua</option>
             <option value="Bug">Bicho</option>
             <option value="Dragon">Dragon</option>
-            
             <option value="Electric">Electrico</option>
             <option value="Ghost">Fantasma</option>
             <option value="Fire">Fuego</option>
@@ -81,28 +89,26 @@
             <option value="Poison">Veneno</option>
             <option value="Flying">Volador</option>
           </select>
-
           <select id="poke-debilidades" class="">
-              <option>DEBILIDADES</option>
-              <option value="Water">Agua</option>
-              <option value="Bug">Bicho</option>
-              <option value="Dragon">Dragon</option>
-              <option value="Electric">Electrico</option>
-              <option value="Ghost">Fantasma</option>
-              <option value="Fire">Fuego</option>
-              <option value="Ice">Hielo</option>
-              <option value="Fight">Lucha</option>
-              <option value="Normal">Normal</option>
-              <option value="Grass">Hierba</option>
-              <option value="Psychic">Psiquico</option>
-              <option value="Rock">Roca</option>
-              <option value="Land">Tierra</option>
-              <option value="Poison">Veneno</option>
-              <option value="Flying">Volador</option>
-            </select>
-
-          <select id="eclosionar">
-            <option>ECLOSIONAR</option>
+            <option>DEBILIDADES</option>
+            <option value="Water">Agua</option>
+            <option value="Bug">Bicho</option>
+            <option value="Dragon">Dragon</option>
+            <option value="Electric">Electrico</option>
+            <option value="Ghost">Fantasma</option>
+            <option value="Fire">Fuego</option>
+            <option value="Ice">Hielo</option>
+            <option value="Fight">Lucha</option>
+            <option value="Normal">Normal</option>
+            <option value="Grass">Hierba</option>
+            <option value="Psychic">Psiquico</option>
+            <option value="Rock">Roca</option>
+            <option value="Land">Tierra</option>
+            <option value="Poison">Veneno</option>
+            <option value="Flying">Volador</option>
+          </select>
+          <select id="eclosionar" class="">
+            <option>TIPOS DE HUEVOS</option>
             <option value="2 km">2 km</option>
             <option value="5 km">5 km</option>
             <option value="10 km">10 km</option>
@@ -111,12 +117,25 @@
         </section>
       </div>
       <div class="text-porcentaje hide" id="porcentaje"></div>
-      <div id="contenedorPoke" class="pokemon"></div>
+          <div id="contenedor-pokemon" class="pokemon"></div>
     </section>
+    <div id="modal-mask" class="modal-mask hide">
+      <div class="modal-box" id="modal-box">
+        <span id="close" class="close">&times;</span>
+        <div id="info-pokemon" class="info-pokemon"></div>
+       </div>
+    </div>
   </main>
 
   <footer>
-
+    <div class="txt-footer">
+      <p> Created by AlelizSanchez® & Miriam® </p>
+      <div class="icon-social">
+        <a href="https://www.facebook.com/PokemonGO/" class="icon-facebook2"></a>
+        <a href="https://www.instagram.com/pokemongoapp/?hl=es-la" class="icon-instagram"></a>
+        <a href="https://twitter.com/pokemongoapp" class="icon-twitter"></a>
+      </div>
+    </div>
   </footer>
   <!-- <script src="./data/lol/lol.js"></script> -->
   <script src="./data/pokemon/pokemon.js"></script>
@@ -124,3 +143,5 @@
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
+
+</html>
