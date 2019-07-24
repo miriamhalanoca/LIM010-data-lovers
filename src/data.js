@@ -3,6 +3,7 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 // data.js
+
 /* filtrar todos los pokemones por tipos */
 const tipospoke = (data, tipo) => {
   let listatipos = [];
@@ -30,7 +31,6 @@ const pokeDebilidad = (data, debilidades) => {
   return listaDebilidad;
 };
 
-
 /* mostrar por orden alfabetico */
 const ordenarAbc = (data) => {
   return data.sort((next, prev) => {
@@ -41,7 +41,6 @@ const ordenarAbc = (data) => {
     }
   });
 };
-
 
 /* mostrar por orden de aparicion */
 const ordenAparicion = (data) => {
@@ -60,8 +59,6 @@ const huevos = (data, stringKm) => {
   const filtrarhuevos = data.filter(filterEggs => filterEggs.egg === stringKm);
   return filtrarhuevos;
 };
-
-
 
 /* buscar pokemones */
 const buscador = (data, buscarpoke) => {

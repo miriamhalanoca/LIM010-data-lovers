@@ -25,7 +25,9 @@ botonUno.addEventListener('click', (event) => {
     paginaUno.classList.add('hide');
     paginaDos.classList.remove('hide');
     botonInicio.classList.remove('hide');
-    document.getElementById('botones').classList.remove('hide');
+
+    document.getElementById('header').classList.remove('hide');
+    document.getElementById('body').classList.remove('fondo');
   } else {
     contador = contador + 1;
     document.getElementById('error').innerHTML = 'la contraseña incorecta';
@@ -33,6 +35,10 @@ botonUno.addEventListener('click', (event) => {
       document.getElementById('error').innerHTML = 'la contraseña es incorrecta vuelva a intentarlo mas tarde';
     }
   }
+});
+
+document.getElementById('bt-menu').addEventListener('click', () => {
+  document.getElementById('menu-nav').classList.remove('hide');
 });
 
 /* boton de regreso a inicio */
@@ -61,9 +67,17 @@ mayormenor.addEventListener('click', () => {
   seleccionarHuevo.classList.add('hide');
 });
 
+/* boton de tipos de pokemones */
+document.getElementById('filter').addEventListener('click', () => {
+  ordenAbc.classList.add('hide');
+  selectorAparicion.classList.add('hide');
+  tipos.classList.remove('hide');
+  pokefragil.classList.add('hide');
+  seleccionarHuevo.classList.add('hide');
+});
 
-/* boton de deBilidades */
-document.getElementById('icon-devilidades').addEventListener('click', () => {
+/* boton de devilidades */
+document.getElementById('icon-debilidades').addEventListener('click', () => {
   ordenAbc.classList.add('hide');
   selectorAparicion.classList.add('hide');
   tipos.classList.add('hide');
@@ -101,6 +115,39 @@ const poke = (data) => {
   return almacenar;
 };
 contenedorPoke.innerHTML = poke(pokedata);
+
+/* modal */
+const modalMask = document.getElementById('modal-mask');
+// const modalBox = document.getElementById('modal-box');
+const infoPokemon = document.getElementById('info-pokemon');
+const close = document.getElementById('close');
+
+const openModal = () => {
+  const eventIdPokemon = parseInt(event.target.parentElement.id);
+  const newArray = pokedata.map(obj => {
+    return obj.id;
+  }).indexOf(eventIdPokemon);
+  if (event.target.parentElement.getAttribute('name') === 'pokemon') {
+    modalMask.classList.remove('hide');
+    infoPokemon.innerHTML = `
+    <img class="img-modal" src="${pokedata[newArray].img}">
+    <p class="name-modal" id="modal"> ${pokedata[newArray].num}</p>
+    <p> Tipos: ${pokedata[newArray].type}</p>
+    <p> Aparicion: ${pokedata[newArray].spawn_chance}</p>
+    <p> altura: ${pokedata[newArray].height}</p>
+    <p> Peso: ${pokedata[newArray].weight}</p>
+    <p> Huevos: ${pokedata[newArray].egg}</p>
+    <p> Debilidades: ${pokedata[newArray].weaknesses}</p>
+    `;
+  }
+  // console.log(eventIdPokemon);
+};
+contenedorPoke.addEventListener('click', () => {
+  openModal();
+});
+close.addEventListener('click', () => {
+  modalMask.classList.add('hide');
+});
 
 /* filtrar todos los pokemones por tipos */
 tipos.addEventListener('change', (event) => {
@@ -156,35 +203,3 @@ encontrarPoke.addEventListener('input', (event) => {
   const pokebuscado = buscador(pokedata, pokeBusca);
   contenedorPoke.innerHTML = poke(pokebuscado);
 });
-
-/* modal */
-const modalMask = document.getElementById('modal-mask');
-// const modalBox = document.getElementById('modal-box');
-const infoPokemon = document.getElementById('info-pokemon');
-const close = document.getElementById('close');
-
-const openModal = () => {
-  const eventIdPokemon = parseInt(event.target.parentElement.id);
-  const newArray = pokedata.map(obj => {
-    return obj.id;
-  }).indexOf(eventIdPokemon);
-  if (event.target.parentElement.getAttribute('name') === 'pokemon') {
-    modalMask.classList.remove('hide');
-    infoPokemon.innerHTML = `
-    <img class="img-modal" src="${pokedata[newArray].img}">
-    <p class="name-modal">${pokedata[newArray].weight}</p>
-    <p></p>
-    <p></p>
-    <p></p>
-    `;
-  }
-  console.log(eventIdPokemon);
-};
-contenedorPoke.addEventListener('click', () => {
-  openModal();
-});
-close.addEventListener('click', () => {
-  modalMask.classList.add('hide');
-});
-
-
