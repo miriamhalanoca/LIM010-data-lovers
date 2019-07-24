@@ -6,75 +6,71 @@
   <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, minimum-scale=1.0">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-  <header>
-
-    <section id="menu-buscador " class="menu">
-      <nav class="menu-nav">
-        <ul>
-          <!-- <il><a href="#" id="Startuno" class="icon-home">INICIO</a></il> -->
-          <il><a href="#"><span id="Start" class="icon-orden">ORDEN</a></il>
-          <il><a href="#"><span id="Order" class="icon-search">MAYOR-MENOR</a></il>
-          <il><a href="#"><span id="Filter" class="icon-filter">TIPOS</a></il>
-          <il><a href="#"><span id="icon-devilidades" class="icon-weaknesses">DEVILIDADES</a></il>
-          <il><a href="#"><span id="calculando" class="icon-eggs">ECLOSIONAR</a></il>
-        </ul>
-      </nav>
-      <form id="botones" class="botones hide">
-        <!-- Input del buscador -->
-        <input id="buscador" placeholder="Encuentra a tu pokemon!" type="text">
-      </form>
-      <!-- Boton de inicio -->
-      <button id="atras" class="botonInicio hide" pe="submit">
-        <span id="glyphicon" class="glyphicon glyphicon-home"></span>
+<body id="body" class="fondo">
+  <header id="header" class="hide">
+    <!-- <section id="menu-buscador " class="menu"> -->
+    <li><a href="#" id="bt-menu" class="bt-menu"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
+    <nav id="menu-nav" class="menu-nav hide">
+      <ul>
+        <!-- <li><a href="#" id="Startuno" class="icon-home">INICIO</a></li> -->
+        <li><a href="#"><span id="start" class="icon-orden">ORDEN</span></a></li>
+        <li><a href="#"><span id="order" class="icon-search">MAYOR-MENOR</span></a></li>
+        <li><a href="#"><span id="filter" class="icon-hour-glass">TIPOS</span></a></li>
+        <li><a href="#"><span id="icon-debilidades" class="icon-weaknesses">DEVILIDADES</span></a></li>
+        <li><a href="#"><span id="calculando" class="icon-eggs">ECLOSIONAR</span></a></li>
+      </ul>
+    </nav>
+    <form id="botones" class="botones">
+      <!-- Input del buscador -->
+      <div>
+        <input id="buscador" placeholder="Encuentra a tu pokemon!" type="text"><i class="fa fa-search"
+          aria-hidden="true"></i>
+      </div>
+      <button id="atras" class="boton-inicio" pe="submit"><i class="fa fa-home" aria-hidden="true"></i>
       </button>
-    </section>
+    </form>
+    <!-- Boton de inicio -->
+    <!-- </section> -->
   </header>
-
-  <main class="page-main">
+  <main>
     <!-- login -->
-    <section class="content-login" id="pantallaUno">
-      <a><span class="lnr lnr-sun"></span></a>
-      <form class="login" id="loginpg">
-        <img src="img/pokemon.png" />
-        <div class="form-item">
-          <label>usuario</label>
-          <input id="nombre" type="text">
-          <label>contraseña</label>
-          <input id="pass" type="password">
-          <section id="error" class="errorDeContraseña"></section>
-        </div>
-        <a>¿olvidastes tu contraseña?</a>
-        <button id="btn" type="button">iniciar sesion</button>
-        <p>¿No tienes una cuenta? Registrate</p>
-      </form>
-    </section>
+    <!--<section id="pantallaUno">-->
+    <form class="login" id="pantalla-uno">a
+      <img alt="log" id="log" src="img/pokelogo.png" />
+      <div class="form-item">
+        <label>usuario</label>
+        <input id="nombre" type="text">
+        <label>contraseña</label>
+        <input id="pass" type="password">
+        <section id="error" class="error"></section>
+      </div>
+      <a>¿olvidastes tu contraseña?</a>
+      <button id="btn" type="button">iniciar sesion</button>
+      <p>¿No tienes una cuenta? Registrate</p>
+    </form>
+    <!--</section>-->
 
     <!-- Segunda pantalla -->
-    <section id="pantallaDos" class="stylePantalla hide">
+    <section id="pantalla-dos" class="style-pantalla hide">
       <div id="section-menu" class="section-menu">
-
-        <section id="diseñopantallados" class="diseño">
-
-          <select id="ordenar" class="">
+        <section id="estilo-select" class="estilo">
+          <select id="ordenar">
             <option>POR ORDEN </option>
-            <option>A-Z</option>
-            <option>Z-A</option>
+            <option value="AZ">A-Z</option>
+            <option value="ZA">Z-A</option>
           </select>
 
-          <select id="direccion-ordenado" class="">
-            <option>DIRECCION</option>
+          <select id="aparicion">
+            <option>APARICION</option>
             <option value="1">MAYOR-MENOR</option>
             <option value="2">MENOR-MAYOR</option>
           </select>
 
-          <select id="tipos" class="">
-            <option>FILTRAR</option>
+          <select id="tipos">
+            <option>TIPOS</option>
             <option value="Water">Agua</option>
             <option value="Bug">Bicho</option>
             <option value="Dragon">Dragon</option>
@@ -92,7 +88,7 @@
             <option value="Flying">Volador</option>
           </select>
 
-          <select id="poke-debilidades" class="">
+          <select id="poke-debilidades">
             <option>DEBILIDADES</option>
             <option value="Water">Agua</option>
             <option value="Bug">Bicho</option>
@@ -111,7 +107,7 @@
             <option value="Flying">Volador</option>
           </select>
 
-          <select id="eclosionar" class="">
+          <select id="eclosionar">
             <option>ECLOSIONAR</option>
             <option value="2 km">2 km</option>
             <option value="5 km">5 km</option>
@@ -120,12 +116,13 @@
           </select>
         </section>
       </div>
-      <div id="contenedorPoke" class="pokemon"></div>
       <div class="text-porcentaje hide" id="porcentaje"></div>
+      <div id="contenedor-pokemon" class="pokemon"></div>
+
     </section>
     <div id="modal-mask" class="modal-mask hide">
+      <span id="close" class="close">&times;</span>
       <div class="modal-box" id="modal-box">
-        <span id="close" class="close">&times;</span>
 
         <div id="info-pokemon" class="info-pokemon"></div>
       </div>
@@ -135,7 +132,7 @@
   <footer>
     <div class="txt-footer">
       <p> Created by AlelizSanchez® & Miriam® </p>
-      <div class="iconSocial">
+      <div class="icon-social">
         <a href="https://www.facebook.com/PokemonGO/" class="icon-facebook2"></a>
         <a href="https://www.instagram.com/pokemongoapp/?hl=es-la" class="icon-instagram"></a>
         <a href="https://twitter.com/pokemongoapp" class="icon-twitter"></a>
@@ -148,3 +145,4 @@
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
+</html>
