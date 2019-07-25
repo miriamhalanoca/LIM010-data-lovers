@@ -21,7 +21,7 @@ botonUno.addEventListener('click', (event) => {
   event.preventDefault();
   const contraseña = document.getElementById('pass').value;
   const usuario = document.getElementById('nombre').value;
-  if (usuario === '' && contraseña === '') {
+  if (usuario === 'LABORATORIA' && contraseña === 'LABORATORIA') {
     paginaUno.classList.add('hide');
     paginaDos.classList.remove('hide');
     botonInicio.classList.remove('hide');

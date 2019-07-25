@@ -94,11 +94,7 @@ Recibimos feedback por parte de nuestras compañeras y sus observaciones fueron 
 El fondo tenia que  ser cambiana por otra tonalidad.
 Mis botones en el mobile sean mas pequeños.
 
-<<<<<<< HEAD
 ## prototipo-alta-fidelidad
 https://www.figma.com/file/rtN3XYW2Q3yvK5TH1TucKn/Untitled-Copy?node-id=38%3A1
 
 https://www.figma.com/file/rtN3XYW2Q3yvK5TH1TucKn/Untitled-Copy?node-id=16%3A18
-=======
-## Prototipo-alta-fidelidad
->>>>>>> a8e7ad45d6f7595ce2fc2ec902076b6c092a45bc
