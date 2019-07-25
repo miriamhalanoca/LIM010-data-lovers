@@ -30,7 +30,7 @@ botonUno.addEventListener('click', (event) => {
     document.getElementById('body').classList.remove('fondo');
   } else {
     contador = contador + 1;
-    document.getElementById('error').innerHTML = 'la contraseña incorecta';
+    document.getElementById('error').innerHTML = 'la contraseña  es incorrecta';
     if (contador === 3) {
       document.getElementById('error').innerHTML = 'la contraseña es incorrecta vuelva a intentarlo mas tarde';
     }
